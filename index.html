@@ -1,33 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" id="main-html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Waly Foundation - Serving the Poor with Dignity</title>
-    <meta name="description" content="Data Waly Foundation - Serving the poor with dignity. Providing services like marriage for poor girls, free medical treatment, laboratory tests, educational support and free food (ration and meals).">
-    <meta name="keywords" content="Data Waly Foundation, charity, poor help, free treatment, educational aid, Pakistan, Sahiwal">
-    <meta name="author" content="Data Waly Foundation">
-    <meta property="og:title" content="Data Waly Foundation">
-    <meta property="og:description" content="Serving the poor with dignity">
-    <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="https://datawalyfoundation.org">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Animate CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
     <style>
-        /* ====== CSS RESET & VARIABLES ====== */
         * {
             margin: 0;
             padding: 0;
@@ -37,75 +19,30 @@
         :root {
             --primary: #2e7d32;
             --primary-dark: #1b5e20;
-            --primary-light: #4caf50;
             --secondary: #ff9800;
-            --secondary-dark: #f57c00;
             --accent: #2196f3;
-            --accent-dark: #1976d2;
             --light: #f9f9f9;
-            --dark: #333333;
-            --gray: #666666;
-            --gray-light: #f5f5f5;
+            --dark: #333;
             --urdu-font: 'Noto Nastaliq Urdu', serif;
             --english-font: 'Poppins', sans-serif;
             --neon-green: #25D366;
             --neon-blue: #2196f3;
             --neon-pink: #e91e63;
             --neon-yellow: #ffeb3b;
-            --neon-orange: #ff9800;
-            --whatsapp-green: #25D366;
-            --facebook-blue: #1877F2;
-            --twitter-blue: #1DA1F2;
-            --instagram-purple: #E4405F;
-            --youtube-red: #FF0000;
-            --tiktok-black: #000000;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
 
-        /* ====== BODY & TYPOGRAPHY ====== */
         body {
             font-family: var(--english-font);
-            background-color: #ffffff;
+            background-color: #f5f5f5;
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            transition: var(--transition);
         }
 
         body.urdu {
             font-family: var(--urdu-font);
             direction: rtl;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            color: var(--gray);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul, ol {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
         }
 
         .container {
@@ -115,56 +52,25 @@
             padding: 0 15px;
         }
 
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 3rem;
-            color: var(--primary);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-
-        body.urdu .section-title::after {
-            right: 50%;
-            left: auto;
-            transform: translateX(50%);
-        }
-
-        /* ====== LANGUAGE TOGGLE ====== */
+        /* Language Toggle Button */
         .language-toggle {
             position: fixed;
             top: 100px;
-            right: 25px;
-            z-index: 1002;
+            right: 20px;
+            z-index: 1001;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px;
-            border-radius: 25px;
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            align-items: center;
+            gap: 8px;
             animation: slideInRight 0.5s ease;
         }
 
@@ -173,33 +79,16 @@
             to { transform: translateX(0); opacity: 1; }
         }
 
-        .lang-btn {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            min-width: 120px;
-            justify-content: center;
-        }
-
-        .lang-btn:hover {
+        .language-toggle:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
         }
 
-        .lang-btn.active {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+        .language-toggle i {
+            font-size: 1.1rem;
         }
 
-        /* ====== HEADER & NAVIGATION ====== */
+        /* Header Styles */
         header {
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -226,93 +115,96 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            text-decoration: none;
         }
 
         .logo-img {
-            height: 65px;
+            height: 60px;
             width: auto;
-            animation: logoPulse 3s infinite;
+            animation: pulse 2s infinite;
         }
 
-        @keyframes logoPulse {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            25% { transform: scale(1.05) rotate(5deg); }
-            50% { transform: scale(1) rotate(0deg); }
-            75% { transform: scale(1.05) rotate(-5deg); }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .logo-text {
             font-size: 1.8rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--primary);
-            display: flex;
-            flex-direction: column;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .logo-text span {
             color: var(--secondary);
-            font-size: 1.6rem;
         }
 
         .nav-links {
             display: flex;
-            align-items: center;
             gap: 30px;
+            align-items: center;
         }
 
-        .nav-link {
+        .nav-links a {
+            text-decoration: none;
             color: var(--dark);
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1.1rem;
+            transition: all 0.3s ease;
             position: relative;
             padding: 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: var(--transition);
         }
 
-        .nav-link:hover {
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-link::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background-color: var(--primary);
             bottom: 0;
             left: 0;
             transition: width 0.3s ease;
-            border-radius: 2px;
         }
 
-        body.urdu .nav-link::after {
-            right: 0;
-            left: auto;
-        }
-
-        .nav-link:hover::after {
+        .nav-links a:hover::after {
             width: 100%;
+        }
+
+        .icon-3d {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-left: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            transform-style: preserve-3d;
+        }
+
+        .nav-links a:hover .icon-3d {
+            transform: rotateY(180deg) scale(1.2);
+            color: var(--secondary);
         }
 
         .donate-btn {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border: none;
-            padding: 14px 28px;
+            padding: 12px 25px;
             border-radius: 50px;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .donate-btn::before {
@@ -322,8 +214,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
         }
 
         .donate-btn:hover::before {
@@ -332,7 +224,12 @@
 
         .donate-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.4);
+        }
+
+        .donate-btn .icon-3d {
+            color: white;
+            font-size: 1.1rem;
         }
 
         .mobile-menu-btn {
@@ -342,28 +239,25 @@
             font-size: 1.8rem;
             color: var(--primary);
             cursor: pointer;
-            transition: var(--transition);
         }
 
-        .mobile-menu-btn:hover {
-            color: var(--secondary);
-        }
-
-        /* ====== HERO SECTION ====== */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             color: white;
             padding: 180px 0 120px;
             text-align: center;
             margin-top: 80px;
             position: relative;
             overflow: hidden;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .hero::before {
@@ -374,39 +268,25 @@
             width: 100%;
             height: 100%;
             background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232e7d32' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.2;
-            animation: backgroundMove 20s linear infinite;
-        }
-
-        @keyframes backgroundMove {
-            from { transform: translate(0, 0); }
-            to { transform: translate(100px, 100px); }
+            opacity: 0.3;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
         }
 
         .hero-title {
-            font-size: 3.8rem;
-            margin-bottom: 25px;
-            color: white;
-            animation: fadeInUp 1s ease 0.2s both;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease 0.3s both;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -416,54 +296,32 @@
 
         .hero-subtitle {
             font-size: 1.4rem;
-            margin-bottom: 40px;
+            max-width: 800px;
+            margin: 0 auto 40px;
             opacity: 0.9;
-            animation: fadeInUp 1s ease 0.4s both;
-            padding: 0 20px;
+            animation: fadeInUp 1s ease 0.5s both;
         }
-
-        .hero-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .hero-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            animation: floatIcon 3s ease-in-out infinite;
-        }
-
-        @keyframes floatIcon {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(10deg); }
-        }
-
-        .hero-icon:nth-child(1) { animation-delay: 0s; }
-        .hero-icon:nth-child(2) { animation-delay: 0.3s; }
-        .hero-icon:nth-child(3) { animation-delay: 0.6s; }
-        .hero-icon:nth-child(4) { animation-delay: 0.9s; }
-        .hero-icon:nth-child(5) { animation-delay: 1.2s; }
 
         .hero-btn {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            background: linear-gradient(135deg, var(--secondary), #ff8a00);
             color: white;
             border: none;
-            padding: 18px 45px;
+            padding: 15px 40px;
             border-radius: 50px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+            margin-top: 20px;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 1s ease 0.8s both;
+            animation: fadeInUp 1s ease 0.7s both;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px auto 0;
         }
 
         .hero-btn::before {
@@ -473,8 +331,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.7s ease;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
         }
 
         .hero-btn:hover::before {
@@ -483,41 +341,41 @@
 
         .hero-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.4);
+            box-shadow: 0 12px 25px rgba(255, 152, 0, 0.5);
         }
 
-        /* ====== STATS SECTION ====== */
+        /* Stats Section */
         .stats {
-            background-color: var(--gray-light);
-            padding: 100px 0;
+            background-color: white;
+            padding: 80px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             position: relative;
         }
 
         .stats-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             flex-wrap: wrap;
             gap: 30px;
         }
 
         .stat-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
             text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
             flex: 1;
-            min-width: 280px;
-            max-width: 350px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            min-width: 250px;
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
 
         .stat-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
         .stat-card::before {
@@ -527,78 +385,80 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
-            background-size: 300% 100%;
-            animation: gradientFlow 3s linear infinite;
-        }
-
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
 
         .stat-number {
-            font-size: 4rem;
-            font-weight: 800;
+            font-size: 3.5rem;
+            font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
             font-family: var(--english-font);
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-            animation: numberGlow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes numberGlow {
-            from { text-shadow: 0 0 10px rgba(46, 125, 50, 0.3), 0 0 20px rgba(46, 125, 50, 0.2); }
-            to { text-shadow: 0 0 20px rgba(46, 125, 50, 0.6), 0 0 30px rgba(46, 125, 50, 0.3); }
         }
 
         .stat-text {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .stat-text i {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            animation: iconPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        /* ====== SERVICES SECTION ====== */
+        /* Services Section */
         .services {
-            background-color: white;
             padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        body.urdu .section-title::after {
+            right: 50%;
+            left: auto;
+            transform: translateX(50%);
         }
 
         .services-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            height: 420px;
-            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
             perspective: 1000px;
+            height: 350px;
+            position: relative;
         }
 
         .service-card:hover {
-            transform: translateY(-15px) rotateX(5deg);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .service-front, .service-back {
@@ -606,12 +466,13 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 15px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            align-items: center;
+            text-align: center;
         }
 
         .service-front {
@@ -634,58 +495,52 @@
             transform: rotateY(0);
         }
 
-        .service-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            border: 4px solid var(--primary);
-            padding: 10px;
-            background: white;
-            transition: var(--transition);
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
         }
 
-        .service-card:hover .service-img {
+        .service-card:hover .service-icon {
             transform: scale(1.1) rotate(10deg);
-            border-color: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary), #ff8a00);
         }
 
         .service-title {
-            font-size: 1.7rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
 
         .service-desc {
-            color: var(--gray);
-            font-size: 1.15rem;
-            line-height: 1.7;
+            color: #666;
+            font-size: 1.1rem;
         }
 
         .back-title {
-            font-size: 1.9rem;
-            margin-bottom: 25px;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
         }
 
         .back-desc {
-            font-size: 1.15rem;
-            opacity: 0.95;
-            line-height: 1.7;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
-        /* ====== DONATION SECTION ====== */
+        /* Donation Section */
         .donation {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
             padding: 100px 0;
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            color: white;
             position: relative;
             overflow: hidden;
         }
@@ -695,8 +550,8 @@
             position: absolute;
             top: -50%;
             right: -20%;
-            width: 600px;
-            height: 600px;
+            width: 500px;
+            height: 500px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
@@ -706,54 +561,49 @@
             position: absolute;
             bottom: -40%;
             left: -15%;
-            width: 500px;
-            height: 500px;
+            width: 400px;
+            height: 400px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
 
         .donation-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: white;
-            position: relative;
-            z-index: 2;
         }
 
         .donation-subtitle {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 60px;
             opacity: 0.9;
-            position: relative;
-            z-index: 2;
         }
 
+        /* Donation Methods Tabs */
         .donation-tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            z-index: 2;
         }
 
         .tab-btn {
             background: none;
             border: none;
             color: white;
-            padding: 18px 35px;
-            font-size: 1.3rem;
+            padding: 15px 30px;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             position: relative;
             opacity: 0.7;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .tab-btn:hover {
@@ -768,118 +618,104 @@
             content: '';
             position: absolute;
             width: 100%;
-            height: 4px;
+            height: 3px;
             background: var(--secondary);
             bottom: -2px;
             left: 0;
-            border-radius: 2px;
+        }
+
+        body.urdu .tab-btn.active::after {
+            right: 0;
+            left: auto;
         }
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.6s ease;
-            position: relative;
-            z-index: 2;
+            animation: fadeIn 0.5s ease;
         }
 
         .tab-content.active {
             display: block;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .method-card {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 850px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .method-header {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 35px;
-            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .method-logo {
-            height: 80px;
+            height: 60px;
             width: auto;
-            animation: logoFloat 3s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         .method-title {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin: 0;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .method-details {
-            text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 35px;
+            text-align: left;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
             line-height: 1.8;
             background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         body.urdu .method-details {
-            text-align: center;
-            border-left: none;
-            border-right: 4px solid var(--secondary);
-        }
-
-        .method-details p {
-            margin-bottom: 12px;
-            color: white;
-        }
-
-        .method-details strong {
-            color: var(--secondary);
+            text-align: right;
         }
 
         .qr-container {
             background: white;
-            padding: 25px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 10px;
             display: inline-block;
-            margin: 25px auto;
-            animation: qrPulse 2s infinite;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes qrPulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
-            50% { transform: scale(1.03); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
+            margin-top: 20px;
+            animation: pulse 2s infinite;
         }
 
         .qr-code {
-            width: 220px;
-            height: 220px;
+            width: 200px;
+            height: 200px;
             object-fit: contain;
         }
 
         .instructions {
-            margin-top: 40px;
-            padding: 30px;
+            margin-top: 30px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            border-radius: 10px;
             text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         body.urdu .instructions {
@@ -887,61 +723,48 @@
         }
 
         .instruction-title {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
             color: var(--secondary);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .instruction-steps {
             list-style: none;
+            padding-left: 20px;
+        }
+
+        body.urdu .instruction-steps {
+            padding-left: 0;
+            padding-right: 20px;
         }
 
         .instruction-steps li {
-            margin-bottom: 15px;
-            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 10px 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .instruction-steps li:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-        }
-
-        body.urdu .instruction-steps li:hover {
-            transform: translateX(-5px);
-        }
-
-        .instruction-steps li i {
-            color: var(--secondary);
-            font-size: 1.3rem;
+            gap: 10px;
         }
 
         .whatsapp-btn {
-            background: linear-gradient(135deg, var(--neon-green), #128C7E);
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             border: none;
-            padding: 18px 40px;
+            padding: 15px 30px;
             border-radius: 50px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            margin-top: 40px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-btn::before {
@@ -951,8 +774,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.7s ease;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
         }
 
         .whatsapp-btn:hover::before {
@@ -960,27 +783,20 @@
         }
 
         .whatsapp-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
 
-        /* ====== CONTACT SECTION ====== */
+        /* Contact Section */
         .contact {
-            background-color: white;
             padding: 100px 0;
+            background-color: white;
         }
 
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        @media (max-width: 992px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
         }
 
         .contact-info {
@@ -988,29 +804,35 @@
         }
 
         .contact-title {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+            font-size: 2rem;
+            margin-bottom: 30px;
             color: var(--primary);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .contact-items {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .contact-title i {
+            color: var(--secondary);
+            animation: tada 2s infinite;
+        }
+
+        @keyframes tada {
+            0% { transform: scale(1); }
+            10%, 20% { transform: scale(0.9) rotate(-3deg); }
+            30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+            40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+            100% { transform: scale(1) rotate(0); }
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            padding: 20px;
-            border-radius: 15px;
-            background: var(--gray-light);
-            transition: var(--transition);
-            border: 1px solid rgba(46, 125, 50, 0.1);
-            min-height: 110px;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
         }
 
         body.urdu .contact-item {
@@ -1018,118 +840,16 @@
         }
 
         .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
+            transform: translateX(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             background: white;
-            border-color: var(--primary);
+        }
+
+        body.urdu .contact-item:hover {
+            transform: translateX(10px);
         }
 
         .contact-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            margin-right: 20px;
-            flex-shrink: 0;
-            position: relative;
-            animation: iconFloat 3s ease-in-out infinite;
-        }
-
-        body.urdu .contact-icon {
-            margin-left: 20px;
-            margin-right: 0;
-        }
-
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .whatsapp-icon {
-            background: linear-gradient(135deg, var(--neon-green), #128C7E);
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
-            animation-delay: 0s;
-        }
-
-        .phone-icon {
-            background: linear-gradient(135deg, var(--neon-blue), #0d47a1);
-            box-shadow: 0 0 20px rgba(33, 150, 243, 0.5);
-            animation-delay: 0.2s;
-        }
-
-        .email-icon {
-            background: linear-gradient(135deg, var(--neon-pink), #880e4f);
-            box-shadow: 0 0 20px rgba(233, 30, 99, 0.5);
-            animation-delay: 0.4s;
-        }
-
-        .location-icon {
-            background: linear-gradient(135deg, var(--neon-yellow), #f57f17);
-            box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
-            animation-delay: 0.6s;
-        }
-
-        .contact-details {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .contact-label {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .contact-value {
-            font-size: 1.1rem;
-            color: var(--dark);
-            display: block;
-            margin-bottom: 5px;
-            font-family: monospace;
-            letter-spacing: 0.5px;
-            direction: ltr;
-            text-align: left;
-            unicode-bidi: embed;
-        }
-
-        body.urdu .contact-value {
-            text-align: right;
-            font-family: var(--urdu-font);
-            letter-spacing: normal;
-        }
-
-        .contact-note {
-            font-size: 0.95rem;
-            color: var(--gray);
-            font-style: italic;
-        }
-
-        .social-section {
-            margin-top: 40px;
-        }
-
-        .social-title {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .social-icon {
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -1138,64 +858,106 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
-            transition: var(--transition);
+            margin-right: 15px;
             position: relative;
-            overflow: hidden;
-            animation: socialFloat 4s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite;
+            flex-shrink: 0;
         }
 
-        .social-icon:nth-child(1) { animation-delay: 0s; background: var(--facebook-blue); }
-        .social-icon:nth-child(2) { animation-delay: 0.5s; background: var(--twitter-blue); }
-        .social-icon:nth-child(3) { animation-delay: 1s; background: var(--instagram-purple); }
-        .social-icon:nth-child(4) { animation-delay: 1.5s; background: var(--youtube-red); }
-        .social-icon:nth-child(5) { animation-delay: 2s; background: var(--tiktok-black); }
-
-        @keyframes socialFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            33% { transform: translateY(-8px) rotate(5deg); }
-            66% { transform: translateY(4px) rotate(-3deg); }
+        body.urdu .contact-icon {
+            margin-right: 0;
+            margin-left: 15px;
         }
 
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
+        .whatsapp-icon {
+            background: linear-gradient(135deg, var(--neon-green), #128C7E);
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
         }
 
-        .social-icon:hover::before {
-            left: 100%;
+        .phone-icon {
+            background: linear-gradient(135deg, var(--neon-blue), #0d47a1);
+            box-shadow: 0 0 15px rgba(33, 150, 243, 0.5);
+        }
+
+        .email-icon {
+            background: linear-gradient(135deg, var(--neon-pink), #880e4f);
+            box-shadow: 0 0 15px rgba(233, 30, 99, 0.5);
+        }
+
+        .location-icon {
+            background: linear-gradient(135deg, var(--neon-yellow), #f57f17);
+            box-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            flex: 1;
+        }
+
+        .contact-text strong {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
         }
 
         .social-icon:hover {
-            transform: scale(1.15) rotate(15deg);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .contact-form {
-            background: var(--gray-light);
-            padding: 45px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            animation: formSlideIn 1s ease;
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            animation: fadeInRight 1s ease;
         }
 
-        @keyframes formSlideIn {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         body.urdu .contact-form {
-            animation: formSlideInUrdu 1s ease;
+            animation: fadeInLeft 1s ease;
         }
 
-        @keyframes formSlideInUrdu {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .form-group {
@@ -1204,28 +966,26 @@
 
         .form-input, .form-textarea {
             width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-family: var(--english-font);
-            font-size: 1.05rem;
-            transition: var(--transition);
-            background: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         body.urdu .form-input, body.urdu .form-textarea {
             font-family: var(--urdu-font);
-            text-align: right;
         }
 
         .form-input:focus, .form-textarea:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.2);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
         }
 
         .form-textarea {
-            height: 160px;
+            height: 150px;
             resize: vertical;
         }
 
@@ -1233,19 +993,19 @@
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border: none;
-            padding: 18px 40px;
+            padding: 15px 40px;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             width: 100%;
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            position: relative;
-            overflow: hidden;
+            gap: 10px;
         }
 
         .submit-btn::before {
@@ -1255,8 +1015,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.7s ease;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
         }
 
         .submit-btn:hover::before {
@@ -1265,79 +1025,76 @@
 
         .submit-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
         }
 
-        /* ====== WHATSAPP FLOAT BUTTON ====== */
+        /* WhatsApp Float Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 35px;
-            left: 35px;
-            z-index: 1001;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
         }
 
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                bottom: 25px;
-                left: 25px;
-            }
+        body.urdu .whatsapp-float {
+            left: auto;
+            right: 30px;
         }
 
         .whatsapp-float a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 75px;
-            height: 75px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--neon-green), #128C7E);
             border-radius: 50%;
             color: white;
-            font-size: 2.2rem;
+            font-size: 2rem;
             text-decoration: none;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
             position: relative;
-            animation: whatsappPulse 2s infinite;
+            animation: neon-pulse 1.5s infinite;
         }
 
-        @keyframes whatsappPulse {
+        @keyframes neon-pulse {
             0%, 100% {
-                box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5),
-                            0 0 20px rgba(37, 211, 102, 0.3);
+                box-shadow: 0 0 10px rgba(37, 211, 102, 0.5),
+                            0 0 20px rgba(37, 211, 102, 0.3),
+                            0 0 30px rgba(37, 211, 102, 0.2);
             }
             50% {
-                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.8),
-                            0 0 40px rgba(37, 211, 102, 0.5),
-                            0 0 60px rgba(37, 211, 102, 0.3);
+                box-shadow: 0 0 20px rgba(37, 211, 102, 0.8),
+                            0 0 40px rgba(37, 211, 102, 0.6),
+                            0 0 60px rgba(37, 211, 102, 0.4);
             }
         }
 
         .whatsapp-float a:hover {
-            transform: scale(1.15) rotate(15deg);
+            transform: scale(1.1) rotate(10deg);
             animation: none;
         }
 
         .whatsapp-float .tooltip {
             position: absolute;
             top: 50%;
-            right: calc(100% + 15px);
+            right: calc(100% + 10px);
             transform: translateY(-50%);
             background: var(--dark);
             color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             white-space: nowrap;
-            pointer-events: none;
         }
 
         body.urdu .whatsapp-float .tooltip {
-            left: calc(100% + 15px);
             right: auto;
+            left: calc(100% + 10px);
         }
 
         .whatsapp-float .tooltip::after {
@@ -1346,14 +1103,14 @@
             top: 50%;
             left: 100%;
             transform: translateY(-50%);
-            border-width: 6px;
+            border-width: 5px;
             border-style: solid;
             border-color: transparent transparent transparent var(--dark);
         }
 
         body.urdu .whatsapp-float .tooltip::after {
-            right: 100%;
             left: auto;
+            right: 100%;
             border-color: transparent var(--dark) transparent transparent;
         }
 
@@ -1362,70 +1119,49 @@
             visibility: visible;
         }
 
-        /* ====== FOOTER ====== */
+        /* Footer */
         footer {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            background: linear-gradient(135deg, #1a1a1a, #333);
             color: white;
-            padding: 80px 0 30px;
+            padding: 70px 0 30px;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px;
-            margin-bottom: 60px;
-        }
-
-        .footer-about {
-            padding-right: 20px;
-        }
-
-        body.urdu .footer-about {
-            padding-left: 20px;
-            padding-right: 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-logo {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
             color: white;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-logo i {
-            color: var(--secondary);
-            font-size: 2.5rem;
         }
 
         .footer-logo span {
             color: var(--secondary);
         }
 
-        .footer-about-text {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            line-height: 1.7;
+        .footer-about {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
         }
 
         .footer-title {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
             color: var(--secondary);
             position: relative;
-            padding-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            padding-bottom: 10px;
         }
 
         .footer-title::after {
             content: '';
             position: absolute;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: var(--secondary);
             bottom: 0;
@@ -1433,24 +1169,30 @@
         }
 
         body.urdu .footer-title::after {
-            right: 0;
             left: auto;
+            right: 0;
         }
 
         .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
         }
 
         .footer-links a {
             color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
             font-size: 1.1rem;
-            transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 0;
+            gap: 8px;
+        }
+
+        body.urdu .footer-links a {
+            flex-direction: row-reverse;
         }
 
         .footer-links a:hover {
@@ -1463,209 +1205,49 @@
             padding-right: 10px;
         }
 
-        .footer-social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .footer-social-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.3rem;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: footerIconFloat 5s ease-in-out infinite;
-        }
-
-        .footer-social-icon:nth-child(1) { animation-delay: 0s; }
-        .footer-social-icon:nth-child(2) { animation-delay: 1s; }
-        .footer-social-icon:nth-child(3) { animation-delay: 2s; }
-        .footer-social-icon:nth-child(4) { animation-delay: 3s; }
-
-        @keyframes footerIconFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-5px) rotate(5deg); }
-            50% { transform: translateY(3px) rotate(-3deg); }
-            75% { transform: translateY(-2px) rotate(2deg); }
-        }
-
-        .footer-social-icon:hover {
-            background: var(--primary);
-            transform: scale(1.15) rotate(15deg);
-            border-color: var(--secondary);
-            animation: none;
-        }
-
         .copyright {
             text-align: center;
-            padding-top: 40px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.8;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            opacity: 0.7;
+            font-size: 1rem;
         }
 
-        /* ====== FIXES FOR MOBILE WHITE SPACE ====== */
-        @media (max-width: 768px) {
-            .hero {
-                min-height: auto;
-                padding: 140px 0 80px;
-                background-attachment: scroll;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-                padding: 0 10px;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-                padding: 0 15px;
-            }
-            
-            .services-container {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .service-card {
-                height: 380px;
-                margin: 0 auto;
-                max-width: 400px;
-            }
-            
-            .service-front, .service-back {
-                padding: 30px;
-            }
-            
-            .contact-item {
-                min-height: auto;
-                padding: 15px;
-            }
-            
-            .contact-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-                margin-right: 15px;
-            }
-            
-            body.urdu .contact-icon {
-                margin-left: 15px;
-                margin-right: 0;
-            }
-            
-            .contact-value {
-                font-size: 1rem;
-                word-break: break-all;
-            }
-        }
-
-        /* ====== FIX FOR URDU TEXT ALIGNMENT ====== */
-        body.urdu .section-title,
-        body.urdu .service-title,
-        body.urdu .back-title,
-        body.urdu .contact-title,
-        body.urdu .footer-title {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .hero-title {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .nav-link,
-        body.urdu .donate-btn,
-        body.urdu .hero-btn,
-        body.urdu .tab-btn,
-        body.urdu .whatsapp-btn,
-        body.urdu .submit-btn,
-        body.urdu .footer-links a {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .stat-text {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .method-header {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .method-title {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .instruction-title {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .instruction-steps li {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .social-title {
-            flex-direction: row-reverse;
-        }
-
-        body.urdu .footer-logo {
-            flex-direction: row-reverse;
-        }
-
-        /* ====== RESPONSIVE DESIGN ====== */
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 3.2rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-        }
-
+        /* Responsive Design */
         @media (max-width: 992px) {
-            .hero {
-                padding: 150px 0 80px;
-            }
-            
             .hero-title {
                 font-size: 2.8rem;
             }
             
-            .section {
-                padding: 80px 0;
+            .stat-card {
+                min-width: 200px;
             }
             
             .services-container {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
             
-            .contact-container {
-                grid-template-columns: 1fr;
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            body.urdu .whatsapp-float {
+                left: auto;
+                right: 20px;
+            }
+            
+            .whatsapp-float a {
+                width: 60px;
+                height: 60px;
+                font-size: 1.7rem;
             }
             
             .language-toggle {
                 top: 90px;
-                right: 20px;
-                flex-direction: row;
-                gap: 8px;
-            }
-            
-            .lang-btn {
-                padding: 10px 18px;
-                font-size: 0.9rem;
-                min-width: 110px;
+                right: 15px;
+                padding: 8px 15px;
+                font-size: 0.8rem;
             }
         }
 
@@ -1678,10 +1260,8 @@
                 display: none;
                 width: 100%;
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
                 margin-top: 20px;
-                padding-top: 20px;
-                border-top: 1px solid #eee;
             }
             
             .nav-links.active {
@@ -1693,34 +1273,28 @@
             }
             
             .hero-title {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
             
             .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .hero-btn {
-                padding: 16px 35px;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .stat-card {
                 min-width: 100%;
-                max-width: 100%;
-            }
-            
-            .services-container {
-                grid-template-columns: 1fr;
             }
             
             .service-card {
-                height: 380px;
-                max-width: 100%;
+                height: 320px;
+            }
+            
+            .method-header {
+                flex-direction: column;
+                text-align: center;
             }
             
             .donation-tabs {
@@ -1732,234 +1306,135 @@
                 width: 100%;
                 text-align: center;
                 justify-content: center;
-                padding: 16px;
             }
             
-            .method-card {
-                padding: 30px;
-            }
-            
-            .contact-form {
-                padding: 30px;
-            }
-            
-            .whatsapp-float a {
-                width: 65px;
-                height: 65px;
-                font-size: 1.9rem;
-            }
-            
-            .language-toggle {
-                top: 85px;
-                right: 15px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 130px 0 60px;
-            }
-            
-            .hero-title {
-                font-size: 1.9rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 1.9rem;
-            }
-            
-            .stat-number {
-                font-size: 3.2rem;
-            }
-            
-            .service-card {
-                height: 360px;
-            }
-            
-            .method-card {
-                padding: 25px;
-            }
-            
-            .qr-code {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .contact-form {
-                padding: 25px;
-            }
-            
-            .whatsapp-float {
-                bottom: 20px;
-                left: 20px;
-            }
-            
-            .whatsapp-float a {
-                width: 60px;
-                height: 60px;
-                font-size: 1.7rem;
+            .whatsapp-float .tooltip {
+                display: none;
             }
             
             .language-toggle {
                 top: 80px;
                 right: 10px;
-            }
-            
-            .lang-btn {
-                padding: 8px 15px;
-                font-size: 0.85rem;
-                min-width: 100px;
+                padding: 6px 12px;
+                font-size: 0.7rem;
             }
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
             .hero-title {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
             }
             
-            .hero-btn {
-                padding: 14px 25px;
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 1.7rem;
-            }
-            
-            .stat-card {
-                padding: 30px 20px;
-            }
-            
-            .service-card {
-                height: 340px;
+            .method-card {
                 padding: 20px;
             }
             
-            .service-front, .service-back {
-                padding: 20px;
+            .contact-form {
+                padding: 25px;
             }
             
-            .service-img {
-                width: 80px;
-                height: 80px;
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .whatsapp-float {
+                bottom: 15px;
+                left: 15px;
+            }
+            
+            body.urdu .whatsapp-float {
+                left: auto;
+                right: 15px;
+            }
+            
+            .whatsapp-float a {
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+            
+            .language-toggle {
+                top: 70px;
+                right: 5px;
+                padding: 5px 10px;
+                font-size: 0.6rem;
             }
         }
 
-        /* ====== CUSTOM SCROLLBAR ====== */
+        /* Animation for stats */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-stat {
+            animation: countUp 1s ease-out forwards;
+        }
+
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 12px;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
-            border-radius: 6px;
         }
 
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 6px;
-            border: 2px solid #f1f1f1;
+            border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
-        }
-
-        /* ====== UTILITY CLASSES ====== */
-        .text-center {
-            text-align: center;
-        }
-
-        .text-right {
-            text-align: right;
-        }
-
-        .text-left {
-            text-align: left;
-        }
-
-        .mb-0 {
-            margin-bottom: 0;
-        }
-
-        .mt-0 {
-            margin-top: 0;
-        }
-
-        .py-0 {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-
-        .px-0 {
-            padding-left: 0;
-            padding-right: 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
         }
     </style>
 </head>
 <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button class="lang-btn" id="urduBtn">
-            <i class="fas fa-language"></i> <span>اردو</span>
-        </button>
-        <button class="lang-btn active" id="englishBtn">
-            <i class="fas fa-language"></i> <span>English</span>
-        </button>
-    </div>
+    <!-- Language Toggle Button -->
+    <button class="language-toggle" id="languageToggle">
+        <i class="fas fa-language"></i>
+        <span id="languageText">اردو</span>
+    </button>
 
-    <!-- WhatsApp Float -->
+    <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/923017211194?text=Hello!%20I%20want%20to%20contact%20Data%20Waly%20Foundation." target="_blank" id="whatsappLink">
+        <a href="https://wa.me/923017211194?text=Hello! I want to contact Data Waly Foundation." target="_blank">
             <i class="fab fa-whatsapp"></i>
-            <span class="tooltip" id="whatsappTooltip">Chat with us!</span>
+            <span class="tooltip">Chat with us! 💬</span>
         </a>
     </div>
 
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#home" class="logo">
+            <div class="logo">
                 <img src="images/logo.png" alt="Data Waly Foundation" class="logo-img">
-                <div class="logo-text">
-                    <span>Data Waly</span>
-                    Foundation
-                </div>
-            </a>
+                <div class="logo-text">Data Waly <span>Foundation</span></div>
+            </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             
             <nav class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link">
-                    <i class="fas fa-home"></i>
-                    <span class="nav-text" data-english="Home" data-urdu="ہوم">Home</span>
-                </a>
-                <a href="#services" class="nav-link">
-                    <i class="fas fa-hands-helping"></i>
-                    <span class="nav-text" data-english="Services" data-urdu="خدمات">Services</span>
-                </a>
-                <a href="#stats" class="nav-link">
-                    <i class="fas fa-chart-line"></i>
-                    <span class="nav-text" data-english="Statistics" data-urdu="اعداد و شمار">Statistics</span>
-                </a>
-                <a href="#donation" class="nav-link">
-                    <i class="fas fa-donate"></i>
-                    <span class="nav-text" data-english="Donate" data-urdu="عطیہ دیں">Donate</span>
-                </a>
-                <a href="#contact" class="nav-link">
-                    <i class="fas fa-phone-alt"></i>
-                    <span class="nav-text" data-english="Contact" data-urdu="رابطہ کریں">Contact</span>
-                </a>
-                <button class="donate-btn" id="donateBtnHeader">
-                    <i class="fas fa-heart"></i>
-                    <span class="nav-text" data-english="Donate Now" data-urdu="ابھی عطیہ دیں">Donate Now</span>
-                </button>
+                <a href="#home">Home <i class="fas fa-home icon-3d"></i></a>
+                <a href="#services">Services <i class="fas fa-hands-helping icon-3d"></i></a>
+                <a href="#stats">Statistics <i class="fas fa-chart-bar icon-3d"></i></a>
+                <a href="#donation">Donate <i class="fas fa-heart icon-3d"></i></a>
+                <a href="#contact">Contact <i class="fas fa-phone-alt icon-3d"></i></a>
+                <button class="donate-btn" id="donateBtnHeader">Donate Now <i class="fas fa-heart icon-3d"></i></button>
             </nav>
         </div>
     </header>
@@ -1967,214 +1442,119 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1 class="hero-title">
-                <i class="fas fa-hands-helping hero-icon"></i>
-                <span class="hero-title-text" data-english="Data Waly Foundation" data-urdu="داتا والے فاؤنڈیشن">Data Waly Foundation</span>
-                <i class="fas fa-star hero-icon"></i>
-            </h1>
-            
-            <p class="hero-subtitle">
-                <span class="hero-subtitle-text" data-english="Serving the poor with dignity. We provide services like marriage for poor girls, free medical treatment, laboratory tests, educational support, and free food (ration & meals)." data-urdu="غریبون کی خدمت، عزت کے ساتھ۔ ہم غریب لڑکیوں کی شادی، مفت طبی علاج، لیبارٹری ٹیسٹ، تعلیمی معاونت اور مفت خوراک (راشن و کھانا) جیسی خدمات فراہم کرتے ہیں۔">
-                    Serving the poor with dignity. We provide services like marriage for poor girls, free medical treatment, laboratory tests, educational support, and free food (ration & meals).
-                </span>
-            </p>
-            
-            <div class="hero-icons">
-                <i class="fas fa-heart hero-icon"></i>
-                <i class="fas fa-hospital hero-icon"></i>
-                <i class="fas fa-flask hero-icon"></i>
-                <i class="fas fa-book hero-icon"></i>
-                <i class="fas fa-utensils hero-icon"></i>
-            </div>
-            
-            <button class="hero-btn" id="donateBtnHero">
-                <i class="fas fa-gift"></i>
-                <span class="hero-btn-text" data-english="Donate Now" data-urdu="ابھی عطیہ دیں">Donate Now</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
+            <h1 class="hero-title">Data Waly Foundation <i class="fas fa-star icon-3d"></i></h1>
+            <p class="hero-subtitle">Serving the poor with dignity <i class="fas fa-hands icon-3d"></i> We arrange marriages for poor girls <i class="fas fa-heart icon-3d"></i>, provide free medical treatment <i class="fas fa-hospital icon-3d"></i>, laboratory tests <i class="fas fa-flask icon-3d"></i>, educational support <i class="fas fa-book icon-3d"></i> and free food (ration & meals) <i class="fas fa-utensils icon-3d"></i>.</p>
+            <button class="hero-btn" id="donateBtnHero">Donate Now <i class="fas fa-gift icon-3d"></i></button>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats section" id="stats">
+    <section class="stats" id="stats">
         <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-trophy"></i>
-                <span class="section-title-text" data-english="Our Achievements" data-urdu="ہمارے کارنامے">Our Achievements</span>
-            </h2>
-            
+            <h2 class="section-title">Our Achievements <i class="fas fa-trophy icon-3d"></i></h2>
             <div class="stats-container">
                 <div class="stat-card">
                     <div class="stat-number" id="stat1">0</div>
-                    <div class="stat-text">
-                        <i class="fas fa-heart"></i>
-                        <span class="stat-text-item" data-english="Marriages" data-urdu="شادیان">Marriages</span>
-                    </div>
+                    <div class="stat-text">Marriages <i class="fas fa-heart icon-3d"></i></div>
                 </div>
-                
                 <div class="stat-card">
                     <div class="stat-number" id="stat2">0</div>
-                    <div class="stat-text">
-                        <i class="fas fa-stethoscope"></i>
-                        <span class="stat-text-item" data-english="Treatments" data-urdu="علاج">Treatments</span>
-                    </div>
+                    <div class="stat-text">Treatments <i class="fas fa-hospital icon-3d"></i></div>
                 </div>
-                
                 <div class="stat-card">
                     <div class="stat-number" id="stat3">0</div>
-                    <div class="stat-text">
-                        <i class="fas fa-user-md"></i>
-                        <span class="stat-text-item" data-english="Doctors" data-urdu="طباء">Doctors</span>
-                    </div>
+                    <div class="stat-text">Doctors <i class="fas fa-user-md icon-3d"></i></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services section" id="services">
+    <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-concierge-bell"></i>
-                <span class="section-title-text" data-english="Our Services" data-urdu="ہماری خدمات">Our Services</span>
-            </h2>
-            
+            <h2 class="section-title">Our Services <i class="fas fa-tools icon-3d"></i></h2>
             <div class="services-container">
-                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-front">
-                        <img src="images/marriage.jpg" alt="Marriage for Poor Girls" class="service-img">
-                        <h3 class="service-title">
+                        <div class="service-icon">
                             <i class="fas fa-heart"></i>
-                            <span class="service-title-text" data-english="Marriage for Poor Girls" data-urdu="غریب لڑکیوں کی شادی">Marriage for Poor Girls</span>
-                        </h3>
-                        <p class="service-desc">
-                            <span class="service-desc-text" data-english="Arranging marriages for poor and needy girls with complete support" data-urdu="غریب اور نادار لڑکیوں کی شادی کا مکمل انتظام اور معاونت">Arranging marriages for poor and needy girls with complete support</span>
-                        </p>
+                        </div>
+                        <h3 class="service-title">Marriage for Poor Girls <i class="fas fa-heart icon-3d"></i></h3>
+                        <p class="service-desc">Arranging marriages for poor and needy girls</p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">
-                            <i class="fas fa-ring"></i>
-                            <span class="back-title-text" data-english="Wedding Support" data-urdu="شادی کی معاونت">Wedding Support</span>
-                        </h3>
-                        <p class="back-desc">
-                            <span class="back-desc-text" data-english="Complete marriage arrangement including dowry, venue, and other necessities" data-urdu="مکمل شادی کا انتظام، جہیز، جگہ اور دیگر ضروریات">Complete marriage arrangement including dowry, venue, and other necessities</span>
-                        </p>
+                        <h3 class="back-title">Marriage Arrangement <i class="fas fa-heart icon-3d"></i></h3>
+                        <p class="back-desc">Complete marriage arrangement, dowry and other necessities</p>
                     </div>
                 </div>
                 
-                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-front">
-                        <img src="images/medical.jpg" alt="Free Medical Treatment" class="service-img">
-                        <h3 class="service-title">
+                        <div class="service-icon">
                             <i class="fas fa-hospital"></i>
-                            <span class="service-title-text" data-english="Free Medical Treatment" data-urdu="مفت طبی علاج">Free Medical Treatment</span>
-                        </h3>
-                        <p class="service-desc">
-                            <span class="service-desc-text" data-english="Free medical treatment and medicines for the poor and needy" data-urdu="غریبوں اور ناداروں کے لیے مفت علاج اور ادویات">Free medical treatment and medicines for the poor and needy</span>
-                        </p>
+                        </div>
+                        <h3 class="service-title">Free Medical Treatment <i class="fas fa-hospital icon-3d"></i></h3>
+                        <p class="service-desc">Free treatment and medicines for the poor</p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">
-                            <i class="fas fa-pills"></i>
-                            <span class="back-title-text" data-english="Medical Care" data-urdu="طبی نگہداشت">Medical Care</span>
-                        </h3>
-                        <p class="back-desc">
-                            <span class="back-desc-text" data-english="Doctors consultation, medicines, and hospital arrangements" data-urdu="ڈاکٹرز کی مشاورت، ادویات اور ہسپتال کا انتظام">Doctors consultation, medicines, and hospital arrangements</span>
-                        </p>
+                        <h3 class="back-title">Free Treatment <i class="fas fa-pills icon-3d"></i></h3>
+                        <p class="back-desc">Doctors, medicines and hospital arrangements</p>
                     </div>
                 </div>
                 
-                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-front">
-                        <img src="images/lab.jpg" alt="Laboratory Tests" class="service-img">
-                        <h3 class="service-title">
+                        <div class="service-icon">
                             <i class="fas fa-flask"></i>
-                            <span class="service-title-text" data-english="Laboratory Tests" data-urdu="لیبارٹری ٹیسٹ">Laboratory Tests</span>
-                        </h3>
-                        <p class="service-desc">
-                            <span class="service-desc-text" data-english="Free laboratory tests and medical diagnosis" data-urdu="مفت لیبارٹری ٹیسٹ اور طبی تشخیص">Free laboratory tests and medical diagnosis</span>
-                        </p>
+                        </div>
+                        <h3 class="service-title">Laboratory Tests <i class="fas fa-flask icon-3d"></i></h3>
+                        <p class="service-desc">Free laboratory tests and diagnosis</p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">
-                            <i class="fas fa-vial"></i>
-                            <span class="back-title-text" data-english="Test Facilities" data-urdu="ٹیسٹ سہولیات">Test Facilities</span>
-                        </h3>
-                        <p class="back-desc">
-                            <span class="back-desc-text" data-english="Blood tests, X-ray, Ultrasound, and other diagnostic tests" data-urdu="بلڈ ٹیسٹ، ایکسرے، الٹراساؤنڈ اور دیگر تشخیصی ٹیسٹ">Blood tests, X-ray, Ultrasound, and other diagnostic tests</span>
-                        </p>
+                        <h3 class="back-title">Test Facilities <i class="fas fa-vial icon-3d"></i></h3>
+                        <p class="back-desc">Blood tests, X-ray, ultrasound etc.</p>
                     </div>
                 </div>
                 
-                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-front">
-                        <img src="images/education.jpg" alt="Educational Support" class="service-img">
-                        <h3 class="service-title">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span class="service-title-text" data-english="Educational Support" data-urdu="تعلیمی معاونت">Educational Support</span>
-                        </h3>
-                        <p class="service-desc">
-                            <span class="service-desc-text" data-english="Educational assistance for poor students and children" data-urdu="غریب طلباء اور بچوں کے لیے تعلیمی امداد">Educational assistance for poor students and children</span>
-                        </p>
+                        <div class="service-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="service-title">Educational Support <i class="fas fa-book icon-3d"></i></h3>
+                        <p class="service-desc">Educational assistance for poor students</p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">
-                            <i class="fas fa-book-open"></i>
-                            <span class="back-title-text" data-english="Educational Help" data-urdu="تعلیمی مدد">Educational Help</span>
-                        </h3>
-                        <p class="back-desc">
-                            <span class="back-desc-text" data-english="School fees, books, uniform, and other educational facilities" data-urdu="اسکول فیس، کتابیں، یونیفارم اور دیگر تعلیمی سہولیات">School fees, books, uniform, and other educational facilities</span>
-                        </p>
+                        <h3 class="back-title">Educational Help <i class="fas fa-graduation-cap icon-3d"></i></h3>
+                        <p class="back-desc">Fees, books, uniforms and other facilities</p>
                     </div>
                 </div>
                 
-                <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-front">
-                        <img src="images/dastarkhwan.jpg" alt="Free Food Distribution" class="service-img">
-                        <h3 class="service-title">
+                        <div class="service-icon">
                             <i class="fas fa-utensils"></i>
-                            <span class="service-title-text" data-english="Free Food (Ration & Meals)" data-urdu="مفت خوراک (راشن و کھانا)">Free Food (Ration & Meals)</span>
-                        </h3>
-                        <p class="service-desc">
-                            <span class="service-desc-text" data-english="Free ration and daily meals for poor families" data-urdu="غریب خاندانوں کے لیے مفت راشن اور روزانہ کھانا">Free ration and daily meals for poor families</span>
-                        </p>
+                        </div>
+                        <h3 class="service-title">Free Food (Ration & Meals) <i class="fas fa-utensils icon-3d"></i></h3>
+                        <p class="service-desc">Free ration and food for the poor</p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">
-                            <i class="fas fa-drumstick-bite"></i>
-                            <span class="back-title-text" data-english="Food Supply" data-urdu="خوراک کی فراہمی">Food Supply</span>
-                        </h3>
-                        <p class="back-desc">
-                            <span class="back-desc-text" data-english="Monthly ration packages and daily meal distribution" data-urdu="ماہانہ راشن پیکجز اور روزانہ کھانے کی تقسیم">Monthly ration packages and daily meal distribution</span>
-                        </p>
+                        <h3 class="back-title">Food Supply <i class="fas fa-bowl-rice icon-3d"></i></h3>
+                        <p class="back-desc">Monthly ration and daily meal arrangements</p>
                     </div>
                 </div>
                 
-                <!-- Service 6 -->
                 <div class="service-card">
                     <div class="service-front">
-                        <img src="images/ambulance.jpg" alt="Free Ambulance Service" class="service-img">
-                        <h3 class="service-title">
+                        <div class="service-icon">
                             <i class="fas fa-ambulance"></i>
-                            <span class="service-title-text" data-english="Free Ambulance Service" data-urdu="مفت ایمبولینس سروس">Free Ambulance Service</span>
-                        </h3>
-                        <p class="service-desc">
-                            <span class="service-desc-text" data-english="Free ambulance service and emergency medical help" data-urdu="مفت ایمبولینس سروس اور ہنگامی طبی مدد">Free ambulance service and emergency medical help</span>
-                        </p>
+                        </div>
+                        <h3 class="service-title">Free Ambulance Service <i class="fas fa-ambulance icon-3d"></i></h3>
+                        <p class="service-desc">Free ambulance service and emergency help</p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">
-                            <i class="fas fa-first-aid"></i>
-                            <span class="back-title-text" data-english="Emergency Service" data-urdu="ہنگامی سروس">Emergency Service</span>
-                        </h3>
-                        <p class="back-desc">
-                            <span class="back-desc-text" data-english="24/7 ambulance service and emergency treatment" data-urdu="24/7 ایمبولینس سروس اور ہنگامی علاج">24/7 ambulance service and emergency treatment</span>
-                        </p>
+                        <h3 class="back-title">Emergency Service <i class="fas fa-bell icon-3d"></i></h3>
+                        <p class="back-desc">24/7 ambulance service and emergency treatment</p>
                     </div>
                 </div>
             </div>
@@ -2182,45 +1562,28 @@
     </section>
 
     <!-- Donation Section -->
-    <section class="donation section" id="donation">
+    <section class="donation" id="donation">
         <div class="container">
-            <h2 class="donation-title">
-                <i class="fas fa-hand-holding-heart"></i>
-                <span class="donation-title-text" data-english="Your Donation Can Change Lives" data-urdu="آپ کا عطیہ زندگیاں بدل سکتا ہے">Your Donation Can Change Lives</span>
-            </h2>
-            
-            <p class="donation-subtitle">
-                <span class="donation-subtitle-text" data-english="Send your donation via JazzCash or Bank Account. Every single rupee is spent on helping the poor." data-urdu="اپنا عطیہ JazzCash یا بینک اکاؤنٹ کے ذریعے بھیجیں۔ ہر ایک روپیہ غریبوں کی مدد پر خرچ کیا جاتا ہے۔">
-                    Send your donation via JazzCash or Bank Account. Every single rupee is spent on helping the poor.
-                </span>
-            </p>
+            <h2 class="donation-title">Your donation can change someone's life <i class="fas fa-heart icon-3d"></i></h2>
+            <p class="donation-subtitle">Send your donation via JazzCash or Bank Account. Every penny of yours will be spent on helping the poor. <i class="fas fa-hands icon-3d"></i></p>
             
             <div class="donation-tabs">
-                <button class="tab-btn active" data-tab="jazzcash">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span class="tab-btn-text" data-english="JazzCash" data-urdu="JazzCash">JazzCash</span>
-                </button>
-                <button class="tab-btn" data-tab="bank">
-                    <i class="fas fa-university"></i>
-                    <span class="tab-btn-text" data-english="Bank Account" data-urdu="بینک اکاؤنٹ">Bank Account</span>
-                </button>
+                <button class="tab-btn active" data-tab="jazzcash">JazzCash <i class="fas fa-mobile-alt icon-3d"></i></button>
+                <button class="tab-btn" data-tab="bank">Bank Account <i class="fas fa-university icon-3d"></i></button>
             </div>
             
-            <!-- JazzCash Tab -->
+            <!-- JazzCash Tab Content -->
             <div class="tab-content active" id="jazzcash-tab">
                 <div class="method-card">
                     <div class="method-header">
                         <img src="images/jazzcash.png" alt="JazzCash" class="method-logo">
-                        <h3 class="method-title">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <span class="method-title-text" data-english="Donate via JazzCash" data-urdu="JazzCash کے ذریعے عطیہ دیں">Donate via JazzCash</span>
-                        </h3>
+                        <h3 class="method-title">Donate via JazzCash <i class="fas fa-money-bill-wave icon-3d"></i></h3>
                     </div>
                     
                     <div class="method-details">
-                        <p><strong data-english="Account Title:" data-urdu="اکاؤنٹ ٹائٹل:">Account Title:</strong> Data Waly Foundation</p>
-                        <p><strong data-english="Mobile Number:" data-urdu="موبائل نمبر:">Mobile Number:</strong> <span class="contact-value">0301-7211194</span></p>
-                        <p><strong data-english="Till ID:" data-urdu="ٹِل آئی ڈی:">Till ID:</strong> <span class="contact-value">982-351-540</span></p>
+                        <p><strong>Account Title:</strong> Data Waly Foundation</p>
+                        <p><strong>Mobile Number:</strong> 0301-7211194</p>
+                        <p><strong>Till ID:</strong> 982-351-540</p>
                     </div>
                     
                     <div class="qr-container">
@@ -2228,62 +1591,49 @@
                     </div>
                     
                     <div class="instructions">
-                        <h4 class="instruction-title">
-                            <i class="fas fa-list-ol"></i>
-                            <span class="instruction-title-text" data-english="Instructions:" data-urdu="ہدایات:">Instructions:</span>
-                        </h4>
+                        <h4 class="instruction-title">Instructions: <i class="fas fa-list-alt icon-3d"></i></h4>
                         <ul class="instruction-steps">
-                            <li><i class="fas fa-phone-alt"></i> <span data-english="Dial *786*10# from your mobile" data-urdu="اپنے موبائل سے *786*10# ڈائل کریں">1. Dial *786*10# from your mobile</span></li>
-                            <li><i class="fas fa-keyboard"></i> <span data-english="Enter Till ID: 982351540" data-urdu="ٹِل آئی ڈی درج کریں: 982351540">2. Enter Till ID: <strong>982351540</strong></span></li>
-                            <li><i class="fas fa-money-check-alt"></i> <span data-english="Enter amount and confirm transaction" data-urdu="رقم درج کریں اور لین دین کی تصدیق کریں">3. Enter amount and confirm transaction</span></li>
-                            <li><i class="fas fa-check-circle"></i> <span data-english="Your donation will reach us instantly" data-urdu="آپ کا عطیہ ہمارے پاس فوری طور پر پہنچ جائے گا">4. Your donation will reach us instantly</span></li>
+                            <li><i class="fas fa-phone icon-3d"></i> 1. Dial *786*10# from your mobile</li>
+                            <li><i class="fas fa-calculator icon-3d"></i> 2. Enter Till ID: <strong>982351540</strong></li>
+                            <li><i class="fas fa-money-bill-wave icon-3d"></i> 3. Enter amount and confirm</li>
+                            <li><i class="fas fa-check-circle icon-3d"></i> 4. Your donation will reach us</li>
                         </ul>
                     </div>
                     
                     <button class="whatsapp-btn" id="whatsappBtnJazz">
-                        <i class="fab fa-whatsapp"></i>
-                        <span class="whatsapp-btn-text" data-english="Send Receipt via WhatsApp" data-urdu="واٹس ایپ پر وصولی بھیجیں">Send Receipt via WhatsApp</span>
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="fab fa-whatsapp"></i> Send receipt on WhatsApp <i class="fas fa-mobile-alt icon-3d"></i>
                     </button>
                 </div>
             </div>
             
-            <!-- Bank Tab -->
+            <!-- Bank Tab Content -->
             <div class="tab-content" id="bank-tab">
                 <div class="method-card">
                     <div class="method-header">
-                        <img src="images/bank.png" alt="Bank Transfer" class="method-logo">
-                        <h3 class="method-title">
-                            <i class="fas fa-credit-card"></i>
-                            <span class="method-title-text" data-english="Donate via Bank Account" data-urdu="بینک اکاؤنٹ کے ذریعے عطیہ دیں">Donate via Bank Account</span>
-                        </h3>
+                        <img src="images/bank.png" alt="Bank" class="method-logo">
+                        <h3 class="method-title">Donate via Bank Account <i class="fas fa-money-bill-wave icon-3d"></i></h3>
                     </div>
                     
                     <div class="method-details">
-                        <p><strong data-english="Account Title:" data-urdu="اکاؤنٹ ٹائٹل:">Account Title:</strong> Data Waly Foundation</p>
-                        <p><strong data-english="Bank:" data-urdu="بینک:">Bank:</strong> Meezan Bank</p>
-                        <p><strong data-english="IBAN:" data-urdu="آئی بی اے این:">IBAN:</strong> <span class="contact-value">PK22JCMA1901921017211194</span></p>
-                        <p><strong data-english="Account Number:" data-urdu="اکاؤنٹ نمبر:">Account Number:</strong> <span class="contact-value">1901921017211194</span></p>
-                        <p><strong data-english="Branch:" data-urdu="برانچ:">Branch:</strong> Sahiwal</p>
+                        <p><strong>Account Title:</strong> Data Waly Foundation</p>
+                        <p><strong>Bank:</strong> JS Bank Limited</p>
+                        <p><strong>IBAN:</strong> PK22JCMA1901921017211194</p>
+                        <p><strong>Account Number:</strong> 1901921017211194</p>
+                        <p><strong>Branch:</strong> Sahiwal</p>
                     </div>
                     
                     <div class="instructions">
-                        <h4 class="instruction-title">
-                            <i class="fas fa-list-ol"></i>
-                            <span class="instruction-title-text" data-english="Instructions:" data-urdu="ہدایات:">Instructions:</span>
-                        </h4>
+                        <h4 class="instruction-title">Instructions: <i class="fas fa-list-alt icon-3d"></i></h4>
                         <ul class="instruction-steps">
-                            <li><i class="fas fa-mobile-alt"></i> <span data-english="Transfer from your bank app or visit branch" data-urdu="اپنے بینک ایپ سے منتقلی کریں یا برانچ تشریف لائیں">1. Transfer from your bank app or visit branch</span></li>
-                            <li><i class="fas fa-file-invoice"></i> <span data-english="Use IBAN: PK22JCMA1901921017211194" data-urdu="آئی بی اے این استعمال کریں: PK22JCMA1901921017211194">2. Use IBAN: PK22JCMA1901921017211194</span></li>
-                            <li><i class="fas fa-credit-card"></i> <span data-english="Account Number: 1901921017211194" data-urdu="اکاؤنٹ نمبر: 1901921017211194">3. Account Number: 1901921017211194</span></li>
-                            <li><i class="fas fa-check-double"></i> <span data-english="Send receipt after transfer confirmation" data-urdu="منتقلی کی تصدیق کے بعد وصولی بھیجیں">4. Send receipt after transfer confirmation</span></li>
+                            <li><i class="fas fa-university icon-3d"></i> 1. Transfer from your bank app or branch</li>
+                            <li><i class="fas fa-calculator icon-3d"></i> 2. IBAN: PK22JCMA1901921017211194</li>
+                            <li><i class="fas fa-credit-card icon-3d"></i> 3. Account Number: 1901921017211194</li>
+                            <li><i class="fas fa-check-circle icon-3d"></i> 4. Send receipt after transfer confirmation</li>
                         </ul>
                     </div>
                     
                     <button class="whatsapp-btn" id="whatsappBtnBank">
-                        <i class="fab fa-whatsapp"></i>
-                        <span class="whatsapp-btn-text" data-english="Send Receipt via WhatsApp" data-urdu="واٹس ایپ پر وصولی بھیجیں">Send Receipt via WhatsApp</span>
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="fab fa-whatsapp"></i> Send receipt on WhatsApp <i class="fas fa-mobile-alt icon-3d"></i>
                     </button>
                 </div>
             </div>
@@ -2291,115 +1641,84 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-comments"></i>
-                <span class="section-title-text" data-english="Contact Us" data-urdu="ہم سے رابطہ کریں">Contact Us</span>
-            </h2>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 class="contact-title">
-                        <i class="fas fa-info-circle"></i>
-                        <span class="contact-title-text" data-english="Get in Touch" data-urdu="رابطہ کیجیے">Get in Touch</span>
-                    </h3>
-                    
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <div class="contact-icon whatsapp-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label" data-english="WhatsApp:" data-urdu="واٹس ایپ:">WhatsApp:</span>
-                                <span class="contact-value">+92 301 7211194</span>
-                                <span class="contact-note" data-english="Message us anytime!" data-urdu="کسی بھی وقت ہمیں میسج کریں!">Message us anytime!</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon phone-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label" data-english="Phone:" data-urdu="فون:">Phone:</span>
-                                <span class="contact-value">+92 301 7211194</span>
-                                <span class="contact-note" data-english="Available 24/7" data-urdu="24/7 دستیاب">Available 24/7</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon email-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label" data-english="Email:" data-urdu="ای میل:">Email:</span>
-                                <span class="contact-value">datawalyfoundation@gmail.com</span>
-                                <span class="contact-note" data-english="Send us an email" data-urdu="ہمیں ای میل بھیجیں">Send us an email</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon location-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label" data-english="Address:" data-urdu="پتہ:">Address:</span>
-                                <span class="contact-value">Sahiwal, Punjab, Pakistan</span>
-                                <span class="contact-note" data-english="Visit our office" data-urdu="ہمارے دفتر آئیے">Visit our office</span>
-                            </div>
-                        </div>
+    <section class="contact" id="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="contact-title"><i class="fas fa-comments"></i> Contact Us <i class="fas fa-phone-alt icon-3d"></i></h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
                     </div>
-                    
-                    <div class="social-section">
-                        <h4 class="social-title">
-                            <i class="fas fa-share-alt"></i>
-                            <span class="social-title-text" data-english="Follow Us" data-urdu="ہمیں فالو کریں">Follow Us</span>
-                        </h4>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon" title="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon" title="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon" title="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="#" class="social-icon" title="TikTok">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
-                        </div>
+                    <div class="contact-text">
+                        <strong>WhatsApp:</strong> +92 301 7211194
+                        <br><small>Message us on WhatsApp! <i class="fas fa-comment-dots icon-3d"></i></small>
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-input" id="contactName" placeholder="Your Name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="tel" class="form-input" id="contactPhone" placeholder="Your Phone Number" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="text" class="form-input" id="contactSubject" placeholder="Subject" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea class="form-textarea" id="contactMessage" placeholder="Your Message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            <span class="submit-btn-text" data-english="Send Message" data-urdu="پیغام بھیجیں">Send Message</span>
-                        </button>
-                    </form>
+                <div class="contact-item">
+                    <div class="contact-icon phone-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>Phone Number:</strong> +92 301 7211194
+                        <br><small>Available 24/7 for contact <i class="fas fa-mobile-alt icon-3d"></i></small>
+                    </div>
                 </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon email-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>Email:</strong> datawalyfoundation@gmail.com
+                        <br><small>Send us an email <i class="fas fa-envelope icon-3d"></i></small>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <strong>Address:</strong> Sahiwal, Punjab, Pakistan
+                        <br><small>Visit our office <i class="fas fa-map-marker-alt icon-3d"></i></small>
+                    </div>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Your Name 💁" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Your Email 📧" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" class="form-input" placeholder="Your Phone Number 📱" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Subject 📝" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea class="form-textarea" placeholder="Your Message 💬" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
     </section>
@@ -2409,189 +1728,339 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-about">
-                    <div class="footer-logo">
-                        <i class="fas fa-hands-helping"></i>
-                        <span>Data Waly <span>Foundation</span></span>
-                    </div>
-                    <p class="footer-about-text" data-english="We are committed to serving the poor with dignity and respect. Our mission is to provide comprehensive support to those in need through various charitable services." data-urdu="ہم غریبوں کی عزت و وقار کے ساتھ خدمت کے لیے پرعزم ہیں۔ ہمارا مشن مختلف خیراتی خدمات کے ذریعے ضرورت مندوں کو جامع مدد فراہم کرنا ہے۔">
-                        We are committed to serving the poor with dignity and respect. Our mission is to provide comprehensive support to those in need through various charitable services.
-                    </p>
-                    <div class="footer-social-icons">
-                        <a href="#" class="footer-social-icon" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="footer-social-icon" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="footer-social-icon" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="footer-social-icon" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                    <div class="footer-logo">Data Waly <span>Foundation</span> <i class="fas fa-star icon-3d"></i></div>
+                    <p class="footer-about">We are striving to help poor and needy people. Providing assistance for marriage, treatment, education and food. <i class="fas fa-hands icon-3d"></i></p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-links-container">
-                    <h3 class="footer-title">
-                        <i class="fas fa-bolt"></i>
-                        <span class="footer-title-text" data-english="Quick Links" data-urdu="جلدی لنکس">Quick Links</span>
-                    </h3>
-                    <div class="footer-links">
-                        <a href="#home">
-                            <i class="fas fa-home"></i>
-                            <span data-english="Home" data-urdu="ہوم">Home</span>
-                        </a>
-                        <a href="#services">
-                            <i class="fas fa-hands-helping"></i>
-                            <span data-english="Services" data-urdu="خدمات">Services</span>
-                        </a>
-                        <a href="#stats">
-                            <i class="fas fa-chart-line"></i>
-                            <span data-english="Statistics" data-urdu="اعداد و شمار">Statistics</span>
-                        </a>
-                        <a href="#donation">
-                            <i class="fas fa-donate"></i>
-                            <span data-english="Donate" data-urdu="عطیہ دیں">Donate</span>
-                        </a>
-                        <a href="#contact">
-                            <i class="fas fa-phone-alt"></i>
-                            <span data-english="Contact" data-urdu="رابطہ کریں">Contact</span>
-                        </a>
-                    </div>
+                    <h3 class="footer-title">Quick Links <i class="fas fa-bolt icon-3d"></i></h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-hands-helping"></i> Services</a></li>
+                        <li><a href="#stats"><i class="fas fa-chart-bar"></i> Statistics</a></li>
+                        <li><a href="#donation"><i class="fas fa-heart"></i> Donate</a></li>
+                        <li><a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                    </ul>
                 </div>
                 
                 <div class="footer-services-container">
-                    <h3 class="footer-title">
-                        <i class="fas fa-concierge-bell"></i>
-                        <span class="footer-title-text" data-english="Our Services" data-urdu="ہماری خدمات">Our Services</span>
-                    </h3>
-                    <div class="footer-links">
-                        <a href="#">
-                            <i class="fas fa-heart"></i>
-                            <span data-english="Marriage for Poor Girls" data-urdu="غریب لڑکیوں کی شادی">Marriage for Poor Girls</span>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-stethoscope"></i>
-                            <span data-english="Free Medical Treatment" data-urdu="مفت طبی علاج">Free Medical Treatment</span>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-flask"></i>
-                            <span data-english="Laboratory Tests" data-urdu="لیبارٹری ٹیسٹ">Laboratory Tests</span>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span data-english="Educational Support" data-urdu="تعلیمی معاونت">Educational Support</span>
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-utensils"></i>
-                            <span data-english="Free Food Distribution" data-urdu="مفت خوراک تقسیم">Free Food Distribution</span>
-                        </a>
-                    </div>
+                    <h3 class="footer-title">Services <i class="fas fa-gift icon-3d"></i></h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-heart"></i> Marriage for Poor Girls</a></li>
+                        <li><a href="#"><i class="fas fa-stethoscope"></i> Free Medical Treatment</a></li>
+                        <li><a href="#"><i class="fas fa-flask"></i> Laboratory Tests</a></li>
+                        <li><a href="#"><i class="fas fa-graduation-cap"></i> Educational Support</a></li>
+                        <li><a href="#"><i class="fas fa-utensils"></i> Free Food (Ration & Meals)</a></li>
+                    </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <i class="far fa-copyright"></i>
-                <span class="copyright-text" data-english="2023 Data Waly Foundation, Sahiwal. All rights reserved." data-urdu="2023 داتا والے فاؤنڈیشن، ساہیوال۔ تمام حقوق محفوظ ہیں۔">
-                    2023 Data Waly Foundation, Sahiwal. All rights reserved.
-                </span>
-                <i class="fas fa-heart"></i>
+                © 2023 Data Waly Foundation, Sahiwal. All rights reserved. <i class="fas fa-heart icon-3d"></i>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // ====== LANGUAGE MANAGEMENT ======
-        const urduBtn = document.getElementById('urduBtn');
-        const englishBtn = document.getElementById('englishBtn');
-        const body = document.body;
-        const html = document.documentElement;
-        const whatsappTooltip = document.getElementById('whatsappTooltip');
-        const whatsappLink = document.getElementById('whatsappLink');
+        // Language Toggle
+        const languageToggle = document.getElementById('languageToggle');
+        const languageText = document.getElementById('languageText');
+        const htmlElement = document.getElementById('main-html');
+        const bodyElement = document.body;
         
-        // Set default language to English
-        let currentLanguage = 'english';
+        let currentLanguage = 'en';
         
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            
-            // Update body class and HTML attributes
-            if (lang === 'urdu') {
-                body.classList.add('urdu');
-                html.setAttribute('dir', 'rtl');
-                html.setAttribute('lang', 'ur');
+        // English translations
+        const englishTexts = {
+            languageButton: 'اردو',
+            whatsappTooltip: 'Chat with us! 💬',
+            whatsappUrl: 'https://wa.me/923017211194?text=Hello! I want to contact Data Waly Foundation.',
+            nav: ['Home', 'Services', 'Statistics', 'Donate', 'Contact'],
+            donateButton: 'Donate Now',
+            heroTitle: 'Data Waly Foundation',
+            heroSubtitle: 'Serving the poor with dignity. We arrange marriages for poor girls, provide free medical treatment, laboratory tests, educational support and free food (ration & meals).',
+            heroButton: 'Donate Now',
+            statsTitle: 'Our Achievements',
+            stats: ['Marriages', 'Treatments', 'Doctors'],
+            servicesTitle: 'Our Services',
+            services: [
+                {title: 'Marriage for Poor Girls', desc: 'Arranging marriages for poor and needy girls'},
+                {title: 'Free Medical Treatment', desc: 'Free treatment and medicines for the poor'},
+                {title: 'Laboratory Tests', desc: 'Free laboratory tests and diagnosis'},
+                {title: 'Educational Support', desc: 'Educational assistance for poor students'},
+                {title: 'Free Food (Ration & Meals)', desc: 'Free ration and food for the poor'},
+                {title: 'Free Ambulance Service', desc: 'Free ambulance service and emergency help'}
+            ],
+            donationTitle: 'Your donation can change someone\'s life',
+            donationSubtitle: 'Send your donation via JazzCash or Bank Account. Every penny of yours will be spent on helping the poor.',
+            tabs: ['JazzCash', 'Bank Account'],
+            jazzTitle: 'Donate via JazzCash',
+            jazzDetails: '<p><strong>Account Title:</strong> Data Waly Foundation</p><p><strong>Mobile Number:</strong> 0301-7211194</p><p><strong>Till ID:</strong> 982-351-540</p>',
+            bankTitle: 'Donate via Bank Account',
+            bankDetails: '<p><strong>Account Title:</strong> Data Waly Foundation</p><p><strong>Bank:</strong> JS Bank Limited</p><p><strong>IBAN:</strong> PK22JCMA1901921017211194</p><p><strong>Account Number:</strong> 1901921017211194</p><p><strong>Branch:</strong> Sahiwal</p>',
+            instructionsTitle: 'Instructions:',
+            jazzInstructions: [
+                'Dial *786*10# from your mobile',
+                'Enter Till ID: <strong>982351540</strong>',
+                'Enter amount and confirm',
+                'Your donation will reach us'
+            ],
+            bankInstructions: [
+                'Transfer from your bank app or branch',
+                'IBAN: PK22JCMA1901921017211194',
+                'Account Number: 1901921017211194',
+                'Send receipt after transfer confirmation'
+            ],
+            whatsappButton: 'Send receipt on WhatsApp',
+            contactTitle: 'Contact Us',
+            contactItems: [
+                {type: 'WhatsApp', value: '+92 301 7211194', note: 'Message us on WhatsApp!'},
+                {type: 'Phone Number', value: '+92 301 7211194', note: 'Available 24/7 for contact'},
+                {type: 'Email', value: 'datawalyfoundation@gmail.com', note: 'Send us an email'},
+                {type: 'Address', value: 'Sahiwal, Punjab, Pakistan', note: 'Visit our office'}
+            ],
+            formPlaceholders: ['Your Name', 'Your Email', 'Your Phone Number', 'Subject', 'Your Message'],
+            submitButton: 'Send Message',
+            footerAbout: 'We are striving to help poor and needy people. Providing assistance for marriage, treatment, education and food.',
+            quickLinks: 'Quick Links',
+            footerLinks: ['Home', 'Services', 'Statistics', 'Donate', 'Contact'],
+            footerServices: 'Services',
+            footerServiceItems: ['Marriage for Poor Girls', 'Free Medical Treatment', 'Laboratory Tests', 'Educational Support', 'Free Food (Ration & Meals)'],
+            copyright: '© 2023 Data Waly Foundation, Sahiwal. All rights reserved.'
+        };
+        
+        // Urdu translations
+        const urduTexts = {
+            languageButton: 'English',
+            whatsappTooltip: 'ہم سے بات کریں! 💬',
+            whatsappUrl: 'https://wa.me/923017211194?text=سلام! میں داتا والے فاؤنڈیشن سے رابطہ کرنا چاہتا ہوں۔',
+            nav: ['ہوم', 'خدمات', 'اعداد و شمار', 'عطیہ دیں', 'رابطہ کریں'],
+            donateButton: 'عطیہ دیں',
+            heroTitle: 'داتا والے فاؤنڈیشن',
+            heroSubtitle: 'غریبون کی خدمت، عزت کے ساتھ۔ غریب نیچوں کی شادی، مفت طبی علاج، لیبارٹری ٹیسٹ، تعلیمی معاونت اور دستخوان (راشن و کھانا) جیسی خدمات پیش کر رہے ہیں۔',
+            heroButton: 'عطیہ دیں',
+            statsTitle: 'ہمارے کارنامے',
+            stats: ['شادیان', 'علاج', 'طباء'],
+            servicesTitle: 'ہماری خدمات',
+            services: [
+                {title: 'غریب نیچوں کی شادی', desc: 'غریب اور نادار لڑکیوں کی شادی کا انتظام'},
+                {title: 'مفت طبی علاج', desc: 'غریبوں کے لیے مفت علاج اور ادویات'},
+                {title: 'لیبارٹری ٹیسٹ', desc: 'مفت لیبارٹری ٹیسٹ اور تشخیص'},
+                {title: 'تعلیمی معاونت', desc: 'غریب طلباء کے لیے تعلیمی امداد'},
+                {title: 'دستخوان (راشن و کھانا)', desc: 'غریبوں کے لیے مفت راشن اور کھانا'},
+                {title: 'فری ایمبولینس سروس', desc: 'مفت ایمبولینس سروس اور ایمرجنسی مدد'}
+            ],
+            donationTitle: 'آپ کا عطیہ کسی کی زندگی بدل سکتا ہے',
+            donationSubtitle: 'اپنا عطیہ JazzCash یا بینک اکاؤنٹ کے ذریعے بھیجیں۔ آپ کا ہر روپیہ غریبوں کی مدد پر خرچ کیا جائے گا۔',
+            tabs: ['JazzCash', 'بینک اکاؤنٹ'],
+            jazzTitle: 'JazzCash کے ذریعے عطیہ دیں',
+            jazzDetails: '<p><strong>اکاؤنٹ ٹائٹل:</strong> داتا والے فاؤنڈیشن</p><p><strong>موبائل نمبر:</strong> 0301-7211194</p><p><strong>Till ID:</strong> 982-351-540</p>',
+            bankTitle: 'بینک اکاؤنٹ کے ذریعے عطیہ دیں',
+            bankDetails: '<p><strong>اکاؤنٹ ٹائٹل:</strong> داتا والے فاؤنڈیشن</p><p><strong>بینک:</strong> JS Bank Limited</p><p><strong>IBAN:</strong> PK22JCMA1901921017211194</p><p><strong>اکاؤنٹ نمبر:</strong> 1901921017211194</p><p><strong>برانچ:</strong> ساہیوال</p>',
+            instructionsTitle: 'ہدایات:',
+            jazzInstructions: [
+                'اپنے موبائل سے *786*10# ڈائل کریں',
+                'Till ID درج کریں: <strong>982351540</strong>',
+                'رقم درج کریں اور تصدیق کریں',
+                'آپ کا عطیہ ہمارے پاس پہنچ جائے گا'
+            ],
+            bankInstructions: [
+                'اپنے بینک ایپ یا برانچ سے منتقلی کریں',
+                'IBAN: PK22JCMA1901921017211194',
+                'اکاؤنٹ نمبر: 1901921017211194',
+                'منتقلی کی تصدیق ہونے کے بعد وصولی بھیجیں'
+            ],
+            whatsappButton: 'وصولی وٹس ایپ پر بھیجیں',
+            contactTitle: 'ہم سے رابطہ کریں',
+            contactItems: [
+                {type: 'WhatsApp', value: '+92 301 7211194', note: 'ہمیں WhatsApp پر میسج کریں!'},
+                {type: 'فون نمبر', value: '+92 301 7211194', note: '24/7 رابطہ کے لیے دستیاب'},
+                {type: 'ای میل', value: 'datawalyfoundation@gmail.com', note: 'ہمیں ای میل بھیجیں'},
+                {type: 'پیٹ', value: 'ساہیوال، پنجاب، پاکستان', note: 'ہمارے دفتر آئیے'}
+            ],
+            formPlaceholders: ['آپ کا نام', 'آپ کا ای میل', 'آپ کا فون نمبر', 'موضوع', 'آپ کا پیغام'],
+            submitButton: 'پیغام بھیجیں',
+            footerAbout: 'ہم غریب اور نادار لوگوں کی مدد کے لیے کوشاں ہیں۔ شادی، علاج، تعلیم اور خوراک کی مدد فراہم کر رہے ہیں۔',
+            quickLinks: 'جلدی لنکس',
+            footerLinks: ['ہوم', 'خدمات', 'اعداد و شمار', 'عطیہ دیں', 'رابطہ کریں'],
+            footerServices: 'خدمات',
+            footerServiceItems: ['غریب نیچوں کی شادی', 'مفت طبی علاج', 'لیبارٹری ٹیسٹ', 'تعلیمی معاونت', 'دستخوان (راشن و کھانا)'],
+            copyright: '© 2023 داتا والے فاؤنڈیشن، ساہیوال۔ تمام حقوق محفوظ ہیں۔'
+        };
+        
+        function toggleLanguage() {
+            if (currentLanguage === 'en') {
+                // Switch to Urdu
+                currentLanguage = 'ur';
+                htmlElement.lang = 'ur';
+                htmlElement.dir = 'rtl';
+                bodyElement.classList.add('urdu');
+                languageText.textContent = urduTexts.languageButton;
                 
-                // Update WhatsApp tooltip and link
-                if (whatsappTooltip) {
-                    whatsappTooltip.textContent = 'ہم سے بات کریں!';
-                }
-                if (whatsappLink) {
-                    whatsappLink.href = "https://wa.me/923017211194?text=%D8%B3%D9%84%D8%A7%D9%85!%20%D9%85%DB%8C%DA%BA%20%D8%AF%D8%A7%D8%AA%D8%A7%20%D9%88%D8%A7%D9%84%DB%92%20%D9%81%D8%A7%D9%88%D9%86%DA%88%DB%8C%D8%B4%D9%86%20%D8%B3%DB%92%20%D8%B1%D8%A7%D8%A8%D8%B7%DB%81%20%DA%A9%D8%B1%D9%86%D8%A7%20%DA%86%D8%A7%D9%87%D8%AA%D8%A7%20%D9%87%DB%8C%DA%BA%D8%8E";
-                }
-                
-                // Update button active states
-                urduBtn.classList.add('active');
-                englishBtn.classList.remove('active');
-                
-                // Update form placeholders for Urdu
-                document.querySelectorAll('.form-input, .form-textarea').forEach((input, index) => {
-                    const placeholders = ['آپ کا نام', 'آپ کا فون نمبر', 'موضوع', 'آپ کا پیغام'];
-                    if (placeholders[index]) {
-                        input.placeholder = placeholders[index];
-                    }
-                });
+                // Update all text elements
+                updateTexts(urduTexts);
             } else {
-                body.classList.remove('urdu');
-                html.setAttribute('dir', 'ltr');
-                html.setAttribute('lang', 'en');
+                // Switch to English
+                currentLanguage = 'en';
+                htmlElement.lang = 'en';
+                htmlElement.dir = 'ltr';
+                bodyElement.classList.remove('urdu');
+                languageText.textContent = englishTexts.languageButton;
                 
-                // Update WhatsApp tooltip and link
-                if (whatsappTooltip) {
-                    whatsappTooltip.textContent = 'Chat with us!';
-                }
-                if (whatsappLink) {
-                    whatsappLink.href = "https://wa.me/923017211194?text=Hello!%20I%20want%20to%20contact%20Data%20Waly%20Foundation.";
-                }
-                
-                // Update button active states
-                englishBtn.classList.add('active');
-                urduBtn.classList.remove('active');
-                
-                // Update form placeholders for English
-                document.querySelectorAll('.form-input, .form-textarea').forEach((input, index) => {
-                    const placeholders = ['Your Name', 'Your Phone Number', 'Subject', 'Your Message'];
-                    if (placeholders[index]) {
-                        input.placeholder = placeholders[index];
-                    }
-                });
+                // Update all text elements
+                updateTexts(englishTexts);
             }
-            
-            // Update all translatable text
-            document.querySelectorAll('[data-english], [data-urdu]').forEach(element => {
-                if (lang === 'english' && element.dataset.english) {
-                    element.textContent = element.dataset.english;
-                } else if (lang === 'urdu' && element.dataset.urdu) {
-                    element.textContent = element.dataset.urdu;
-                }
-            });
         }
         
-        // Event listeners for language buttons
-        urduBtn.addEventListener('click', () => {
-            if (currentLanguage !== 'urdu') {
-                setLanguage('urdu');
-            }
-        });
+        function updateTexts(texts) {
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach((link, index) => {
+                if (index < texts.nav.length) {
+                    const span = link.querySelector('span');
+                    if (span) link.removeChild(span);
+                    link.innerHTML = texts.nav[index] + link.innerHTML;
+                }
+            });
+            
+            // Update donate button
+            const donateButtons = document.querySelectorAll('.donate-btn');
+            donateButtons.forEach(btn => {
+                const icon = btn.querySelector('.icon-3d');
+                btn.innerHTML = texts.donateButton;
+                if (icon) btn.appendChild(icon);
+            });
+            
+            // Update hero section
+            document.querySelector('.hero-title').innerHTML = texts.heroTitle + ' <i class="fas fa-star icon-3d"></i>';
+            document.querySelector('.hero-subtitle').innerHTML = texts.heroSubtitle;
+            document.querySelector('.hero-btn').innerHTML = texts.heroButton + ' <i class="fas fa-gift icon-3d"></i>';
+            
+            // Update stats section
+            document.querySelector('.section-title').innerHTML = texts.statsTitle + ' <i class="fas fa-trophy icon-3d"></i>';
+            const statTexts = document.querySelectorAll('.stat-text');
+            statTexts.forEach((text, index) => {
+                const icon = text.querySelector('.icon-3d');
+                text.innerHTML = texts.stats[index];
+                if (icon) text.appendChild(icon);
+            });
+            
+            // Update services section
+            document.querySelector('.services .section-title').innerHTML = texts.servicesTitle + ' <i class="fas fa-tools icon-3d"></i>';
+            const serviceTitles = document.querySelectorAll('.service-title');
+            const serviceDescs = document.querySelectorAll('.service-desc');
+            texts.services.forEach((service, index) => {
+                if (serviceTitles[index]) {
+                    const icon = serviceTitles[index].querySelector('.icon-3d');
+                    serviceTitles[index].innerHTML = service.title;
+                    if (icon) serviceTitles[index].appendChild(icon);
+                }
+                if (serviceDescs[index]) {
+                    serviceDescs[index].textContent = service.desc;
+                }
+            });
+            
+            // Update donation section
+            document.querySelector('.donation-title').innerHTML = texts.donationTitle + ' <i class="fas fa-heart icon-3d"></i>';
+            document.querySelector('.donation-subtitle').innerHTML = texts.donationSubtitle;
+            
+            // Update tabs
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach((btn, index) => {
+                const icon = btn.querySelector('.icon-3d');
+                btn.innerHTML = texts.tabs[index];
+                if (icon) btn.appendChild(icon);
+            });
+            
+            // Update JazzCash tab
+            document.querySelector('#jazzcash-tab .method-title').innerHTML = texts.jazzTitle + ' <i class="fas fa-money-bill-wave icon-3d"></i>';
+            document.querySelector('#jazzcash-tab .method-details').innerHTML = texts.jazzDetails;
+            document.querySelector('#jazzcash-tab .instruction-title').innerHTML = texts.instructionsTitle + ' <i class="fas fa-list-alt icon-3d"></i>';
+            const jazzSteps = document.querySelectorAll('#jazzcash-tab .instruction-steps li');
+            jazzSteps.forEach((step, index) => {
+                const icon = step.querySelector('.icon-3d');
+                step.innerHTML = texts.jazzInstructions[index];
+                if (icon) step.prepend(icon);
+            });
+            
+            // Update Bank tab
+            document.querySelector('#bank-tab .method-title').innerHTML = texts.bankTitle + ' <i class="fas fa-money-bill-wave icon-3d"></i>';
+            document.querySelector('#bank-tab .method-details').innerHTML = texts.bankDetails;
+            document.querySelector('#bank-tab .instruction-title').innerHTML = texts.instructionsTitle + ' <i class="fas fa-list-alt icon-3d"></i>';
+            const bankSteps = document.querySelectorAll('#bank-tab .instruction-steps li');
+            bankSteps.forEach((step, index) => {
+                const icon = step.querySelector('.icon-3d');
+                step.innerHTML = texts.bankInstructions[index];
+                if (icon) step.prepend(icon);
+            });
+            
+            // Update WhatsApp buttons
+            const whatsappBtns = document.querySelectorAll('.whatsapp-btn');
+            whatsappBtns.forEach(btn => {
+                const icon = btn.querySelector('.icon-3d');
+                btn.innerHTML = '<i class="fab fa-whatsapp"></i> ' + texts.whatsappButton;
+                if (icon) btn.appendChild(icon);
+            });
+            
+            // Update WhatsApp float button
+            const whatsappFloat = document.querySelector('.whatsapp-float a');
+            whatsappFloat.href = texts.whatsappUrl;
+            whatsappFloat.querySelector('.tooltip').textContent = texts.whatsappTooltip;
+            
+            // Update contact section
+            document.querySelector('.contact-title').innerHTML = '<i class="fas fa-comments"></i> ' + texts.contactTitle + ' <i class="fas fa-phone-alt icon-3d"></i>';
+            const contactItems = document.querySelectorAll('.contact-item .contact-text');
+            texts.contactItems.forEach((item, index) => {
+                if (contactItems[index]) {
+                    const icon = contactItems[index].querySelector('.icon-3d');
+                    contactItems[index].innerHTML = `<strong>${item.type}:</strong> ${item.value}<br><small>${item.note}`;
+                    if (icon) contactItems[index].appendChild(icon);
+                }
+            });
+            
+            // Update form placeholders
+            const formInputs = document.querySelectorAll('.form-input, .form-textarea');
+            formInputs.forEach((input, index) => {
+                if (index < texts.formPlaceholders.length) {
+                    input.placeholder = texts.formPlaceholders[index];
+                }
+            });
+            
+            // Update submit button
+            document.querySelector('.submit-btn').innerHTML = texts.submitButton + ' <i class="fas fa-paper-plane"></i>';
+            
+            // Update footer
+            document.querySelector('.footer-about').innerHTML = texts.footerAbout + ' <i class="fas fa-hands icon-3d"></i>';
+            document.querySelectorAll('.footer-title')[0].innerHTML = texts.quickLinks + ' <i class="fas fa-bolt icon-3d"></i>';
+            const footerLinks = document.querySelectorAll('.footer-links-container .footer-links a');
+            texts.footerLinks.forEach((link, index) => {
+                if (footerLinks[index]) {
+                    const icon = footerLinks[index].querySelector('i');
+                    footerLinks[index].innerHTML = icon ? `${icon.outerHTML} ${link}` : link;
+                }
+            });
+            
+            document.querySelectorAll('.footer-title')[1].innerHTML = texts.footerServices + ' <i class="fas fa-gift icon-3d"></i>';
+            const serviceLinks = document.querySelectorAll('.footer-services-container .footer-links a');
+            texts.footerServiceItems.forEach((item, index) => {
+                if (serviceLinks[index]) {
+                    const icon = serviceLinks[index].querySelector('i');
+                    serviceLinks[index].innerHTML = icon ? `${icon.outerHTML} ${item}` : item;
+                }
+            });
+            
+            document.querySelector('.copyright').innerHTML = texts.copyright + ' <i class="fas fa-heart icon-3d"></i>';
+        }
         
-        englishBtn.addEventListener('click', () => {
-            if (currentLanguage !== 'english') {
-                setLanguage('english');
-            }
-        });
+        languageToggle.addEventListener('click', toggleLanguage);
         
-        // ====== MOBILE MENU TOGGLE ======
+        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         
@@ -2602,51 +2071,42 @@
                 : '<i class="fas fa-bars"></i>';
         });
         
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target) && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // ====== SMOOTH SCROLLING ======
+        // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                if(targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                    
-                    // Smooth scroll to target
+                if(targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu if open
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
                 }
             });
         });
         
-        // ====== ANIMATED COUNTERS ======
+        // Animated Counter for Stats
         function animateCounter(element, target, duration) {
-            let start = 0;
+            let current = 0;
             const increment = target / (duration / 16); // 60fps
             const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
+                current += increment;
+                if(current >= target) {
                     element.textContent = target + '+';
                     element.classList.add('animate-stat');
                     clearInterval(timer);
                 } else {
-                    element.textContent = Math.floor(start);
+                    element.textContent = Math.floor(current);
                 }
             }, 16);
         }
@@ -2662,22 +2122,18 @@
         
         function checkCounters() {
             const statsSection = document.getElementById('stats');
-            if (!statsSection) return;
-            
             const sectionTop = statsSection.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
             
-            if (sectionTop < windowHeight - 100 && !countersAnimated) {
+            if(sectionTop < windowHeight - 100 && !countersAnimated) {
                 statElements.forEach(stat => {
-                    if (stat.element) {
-                        animateCounter(stat.element, stat.target, 2000);
-                    }
+                    animateCounter(stat.element, stat.target, 1500);
                 });
                 countersAnimated = true;
             }
         }
         
-        // ====== DONATION BUTTONS ======
+        // Scroll to Donation Section
         document.getElementById('donateBtnHeader').addEventListener('click', () => {
             document.getElementById('donation').scrollIntoView({ behavior: 'smooth' });
         });
@@ -2686,7 +2142,7 @@
             document.getElementById('donation').scrollIntoView({ behavior: 'smooth' });
         });
         
-        // ====== DONATION TABS ======
+        // Donation Tabs Functionality
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
         
@@ -2701,93 +2157,61 @@
                 
                 // Show corresponding content
                 const tabId = btn.getAttribute('data-tab');
-                const targetTab = document.getElementById(`${tabId}-tab`);
-                if (targetTab) {
-                    targetTab.classList.add('active');
-                }
+                document.getElementById(`${tabId}-tab`).classList.add('active');
             });
         });
         
-        // ====== WHATSAPP RECEIPT BUTTONS ======
+        // WhatsApp Receipt Buttons
         document.getElementById('whatsappBtnJazz').addEventListener('click', () => {
             const phone = "923017211194";
-            let message = "";
-            if (currentLanguage === 'urdu') {
-                message = "سلام! میں نے داتا والے فاؤنڈیشن کو JazzCash کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
-            } else {
-                message = "Hello! I have donated to Data Waly Foundation via JazzCash. Please send me the receipt.";
-            }
+            const message = currentLanguage === 'en' 
+                ? "Hello! I have donated to Data Waly Foundation via JazzCash. Please send my receipt."
+                : "سلام! میں نے داتا والے فاؤنڈیشن کو JazzCash کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
             const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         });
         
         document.getElementById('whatsappBtnBank').addEventListener('click', () => {
             const phone = "923017211194";
-            let message = "";
-            if (currentLanguage === 'urdu') {
-                message = "سلام! میں نے داتا والے فاؤنڈیشن کو بینک کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
-            } else {
-                message = "Hello! I have donated to Data Waly Foundation via Bank. Please send me the receipt.";
-            }
+            const message = currentLanguage === 'en'
+                ? "Hello! I have donated to Data Waly Foundation via bank transfer. Please send my receipt."
+                : "سلام! میں نے داتا والے فاؤنڈیشن کو بینک کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
             const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         });
         
-        // ====== CONTACT FORM ======
+        // Contact Form Submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('contactName').value;
-            const phone = document.getElementById('contactPhone').value;
-            const subject = document.getElementById('contactSubject').value;
-            const message = document.getElementById('contactMessage').value;
-            
-            // WhatsApp message format
-            const whatsappMessage = `*New Contact Form Submission*%0A%0A` +
-                                   `*Name:* ${name}%0A` +
-                                   `*Phone:* ${phone}%0A` +
-                                   `*Subject:* ${subject}%0A` +
-                                   `*Message:* ${message}`;
-            
-            // Create WhatsApp URL
-            const whatsappURL = `https://wa.me/923017211194?text=${whatsappMessage}`;
-            
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Show success message
-            if (currentLanguage === 'urdu') {
-                alert('آپ کا پیغام وٹس ایپ پر بھیج دیا گیا ہے۔ ہم جلد آپ سے رابطہ کریں گے۔');
-            } else {
-                alert('Your message has been sent via WhatsApp. We will contact you soon.');
-            }
-            
-            // Reset form
+            const message = currentLanguage === 'en'
+                ? 'Your message has been sent. We will contact you soon. 💌'
+                : 'آپ کا پیغام بھیج دیا گیا ہے۔ ہم جلد آپ سے رابطہ کریں گے۔ 💌';
+            alert(message);
             this.reset();
         });
         
-        // ====== FLOATING ICONS ANIMATION ======
+        // Add floating icon animation
         function createFloatingIcon() {
-            const icons = ['fas fa-heart', 'fas fa-star', 'fas fa-hands-helping', 'fas fa-gift', 'fas fa-donate', 'fas fa-hands', 'fas fa-seedling', 'fas fa-home', 'fas fa-utensils', 'fas fa-book'];
+            const icons = ['fas fa-heart', 'fas fa-star', 'fas fa-gift', 'fas fa-hands', 'fas fa-hands-helping', 'fas fa-pray'];
             const iconClass = icons[Math.floor(Math.random() * icons.length)];
             const icon = document.createElement('i');
             icon.className = iconClass;
             icon.style.position = 'fixed';
             icon.style.fontSize = Math.random() * 20 + 20 + 'px';
-            icon.style.color = currentLanguage === 'urdu' ? 'var(--primary)' : 'var(--secondary)';
             icon.style.left = Math.random() * 100 + 'vw';
             icon.style.top = '100vh';
+            icon.style.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
             icon.style.opacity = '0.7';
-            icon.style.zIndex = '9998';
-            icon.style.pointerEvents = none';
+            icon.style.zIndex = '9999';
+            icon.style.pointerEvents = 'none';
+            icon.style.textShadow = '0 0 10px currentColor';
             document.body.appendChild(icon);
             
             const animation = icon.animate([
                 { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
-                { transform: `translateY(-${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                { transform: `translateY(-${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
             ], {
-                duration: Math.random() * 4000 + 3000,
+                duration: Math.random() * 3000 + 3000,
                 easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
             });
             
@@ -2795,34 +2219,42 @@
         }
         
         // Create floating icons occasionally
-        setInterval(createFloatingIcon, 4000);
+        setInterval(createFloatingIcon, 3000);
         
-        // ====== NAVIGATION ACTIVE STATE ON SCROLL ======
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            checkCounters();
+            // Add a welcome message
+            setTimeout(() => {
+                console.log('%c🌟 Welcome to Data Waly Foundation 🌟', 'color: #2e7d32; font-size: 18px; font-weight: bold;');
+                console.log('%c🤲 Serving the poor with dignity 🤲', 'color: #ff9800; font-size: 14px;');
+            }, 1000);
+        });
+        
+        window.addEventListener('scroll', checkCounters);
+        
+        // Add active class to nav links on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollY = window.pageYOffset;
             
-            // Update active nav link
             sections.forEach(section => {
                 const sectionHeight = section.offsetHeight;
                 const sectionTop = section.offsetTop - 100;
                 const sectionId = section.getAttribute('id');
                 
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
+                if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector(`.nav-links a[href="#${sectionId}"]`)?.classList.add('active');
                 } else {
-                    document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.remove('active');
+                    document.querySelector(`.nav-links a[href="#${sectionId}"]`)?.classList.remove('active');
                 }
             });
-            
-            // Check counters
-            checkCounters();
         });
         
-        // ====== SERVICE CARDS HOVER EFFECT ======
+        // Add hover effect to service cards
         document.querySelectorAll('.service-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) rotateX(5deg)';
+                this.style.transform = 'translateY(-10px) rotateX(5deg)';
             });
             
             card.addEventListener('mouseleave', function() {
@@ -2830,76 +2262,16 @@
             });
         });
         
-        // ====== INITIALIZATION ======
-        window.addEventListener('load', () => {
-            // Set default language
-            setLanguage('english');
-            
-            // Initial counter check
-            checkCounters();
-            
-            // Welcome message
-            setTimeout(() => {
-                console.log('%c🌟 Welcome to Data Waly Foundation 🌟', 'color: #2e7d32; font-size: 18px; font-weight: bold;');
-                console.log('%c🤲 Serving the poor with dignity 🤲', 'color: #ff9800; font-size: 14px;');
-            }, 1000);
-        });
-        
-        // ====== RESIZE HANDLER ======
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                // Close mobile menu on resize if open
-                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            }, 250);
-        });
-        
-        // ====== ADDITIONAL EFFECTS ======
-        // Add ripple effect to buttons
-        document.querySelectorAll('.donate-btn, .hero-btn, .submit-btn, .whatsapp-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
-                
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = x + 'px';
-                ripple.style.top = y + 'px';
-                ripple.classList.add('ripple');
-                
-                this.appendChild(ripple);
-                
+        // Add click sound effect (optional)
+        document.addEventListener('click', function(e) {
+            if(e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
+                // Optional: Add a subtle click effect
+                e.target.style.transform = 'scale(0.95)';
                 setTimeout(() => {
-                    ripple.remove();
-                }, 600);
-            });
+                    e.target.style.transform = '';
+                }, 150);
+            }
         });
-        
-        // Add CSS for ripple effect
-        const rippleStyle = document.createElement('style');
-        rippleStyle.textContent = `
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
-                transform: scale(0);
-                animation: ripple-animation 0.6s linear;
-            }
-            
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(rippleStyle);
     </script>
 </body>
 </html>
