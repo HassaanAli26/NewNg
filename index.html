@@ -38,6 +38,16 @@
             line-height: 1.6;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+
+        body.english {
+            font-family: var(--english-font);
+            direction: ltr;
+        }
+
+        body.english .container {
+            text-align: left;
         }
 
         .container {
@@ -45,6 +55,42 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+        }
+
+        /* Language Toggle Button */
+        .language-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--secondary), #ff8a00);
         }
 
         /* Header Styles */
@@ -112,6 +158,9 @@
             transition: all 0.3s ease;
             position: relative;
             padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-links a:hover {
@@ -127,6 +176,11 @@
             bottom: 0;
             left: 0;
             transition: width 0.3s ease;
+        }
+
+        body.english .nav-links a::after {
+            right: 0;
+            left: auto;
         }
 
         .nav-links a:hover::after {
@@ -146,6 +200,9 @@
             box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .donate-btn::before {
@@ -159,8 +216,17 @@
             transition: left 0.5s ease;
         }
 
+        body.english .donate-btn::before {
+            right: -100%;
+            left: auto;
+        }
+
         .donate-btn:hover::before {
             left: 100%;
+        }
+
+        body.english .donate-btn:hover::before {
+            right: 100%;
         }
 
         .donate-btn:hover {
@@ -217,6 +283,10 @@
             margin-bottom: 20px;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
             animation: fadeInUp 1s ease 0.3s both;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         @keyframes fadeInUp {
@@ -238,6 +308,17 @@
             animation: fadeInUp 1s ease 0.5s both;
         }
 
+        .icon-inline {
+            display: inline-block;
+            margin: 0 5px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
         .hero-btn {
             background: linear-gradient(135deg, var(--secondary), #ff8a00);
             color: white;
@@ -253,6 +334,10 @@
             position: relative;
             overflow: hidden;
             animation: fadeInUp 1s ease 0.7s both;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .hero-btn::before {
@@ -266,25 +351,22 @@
             transition: left 0.5s ease;
         }
 
+        body.english .hero-btn::before {
+            right: -100%;
+            left: auto;
+        }
+
         .hero-btn:hover::before {
             left: 100%;
+        }
+
+        body.english .hero-btn:hover::before {
+            right: 100%;
         }
 
         .hero-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(255, 152, 0, 0.5);
-        }
-
-        /* Emoji in Hero */
-        .emoji {
-            display: inline-block;
-            animation: bounce 2s infinite;
-            font-size: 1.5rem;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         /* Stats Section */
@@ -342,6 +424,10 @@
         .stat-text {
             font-size: 1.3rem;
             color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         /* Services Section */
@@ -357,6 +443,10 @@
             color: var(--primary);
             position: relative;
             padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         .section-title::after {
@@ -369,6 +459,12 @@
             right: 50%;
             transform: translateX(50%);
             border-radius: 2px;
+        }
+
+        body.english .section-title::after {
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
         }
 
         .services-container {
@@ -447,6 +543,9 @@
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .service-desc {
@@ -457,6 +556,9 @@
         .back-title {
             font-size: 1.8rem;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .back-desc {
@@ -500,6 +602,10 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         .donation-subtitle {
@@ -529,6 +635,9 @@
             transition: all 0.3s ease;
             position: relative;
             opacity: 0.7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .tab-btn:hover {
@@ -588,14 +697,12 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
         .method-title {
             font-size: 2rem;
             margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .method-details {
@@ -603,6 +710,10 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
             line-height: 1.8;
+        }
+
+        body.english .method-details {
+            text-align: left;
         }
 
         .qr-container {
@@ -628,10 +739,17 @@
             text-align: right;
         }
 
+        body.english .instructions {
+            text-align: left;
+        }
+
         .instruction-title {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .instruction-steps {
@@ -639,9 +757,17 @@
             padding-right: 20px;
         }
 
+        body.english .instruction-steps {
+            padding-left: 20px;
+            padding-right: 0;
+        }
+
         .instruction-steps li {
             margin-bottom: 10px;
             font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .whatsapp-btn {
@@ -673,8 +799,17 @@
             transition: left 0.5s ease;
         }
 
+        body.english .whatsapp-btn::before {
+            right: -100%;
+            left: auto;
+        }
+
         .whatsapp-btn:hover::before {
             left: 100%;
+        }
+
+        body.english .whatsapp-btn:hover::before {
+            right: 100%;
         }
 
         .whatsapp-btn:hover {
@@ -707,19 +842,6 @@
             gap: 10px;
         }
 
-        .contact-title i {
-            color: var(--secondary);
-            animation: tada 2s infinite;
-        }
-
-        @keyframes tada {
-            0% { transform: scale(1); }
-            10%, 20% { transform: scale(0.9) rotate(-3deg); }
-            30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
-            40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
-            100% { transform: scale(1) rotate(0); }
-        }
-
         .contact-item {
             display: flex;
             align-items: center;
@@ -730,10 +852,18 @@
             transition: all 0.3s ease;
         }
 
+        body.english .contact-item {
+            flex-direction: row-reverse;
+        }
+
         .contact-item:hover {
             transform: translateX(-10px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             background: white;
+        }
+
+        body.english .contact-item:hover {
+            transform: translateX(10px);
         }
 
         .contact-icon {
@@ -748,6 +878,12 @@
             margin-left: 15px;
             position: relative;
             animation: float 3s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        body.english .contact-icon {
+            margin-right: 15px;
+            margin-left: 0;
         }
 
         .whatsapp-icon {
@@ -826,6 +962,21 @@
             }
         }
 
+        body.english .contact-form {
+            animation: fadeInLeft 1s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         .form-group {
             margin-bottom: 25px;
         }
@@ -838,6 +989,10 @@
             font-family: var(--urdu-font);
             font-size: 1rem;
             transition: all 0.3s ease;
+        }
+
+        body.english .form-input, body.english .form-textarea {
+            font-family: var(--english-font);
         }
 
         .form-input:focus, .form-textarea:focus {
@@ -864,6 +1019,10 @@
             width: 100%;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .submit-btn::before {
@@ -877,8 +1036,17 @@
             transition: left 0.5s ease;
         }
 
+        body.english .submit-btn::before {
+            right: -100%;
+            left: auto;
+        }
+
         .submit-btn:hover::before {
             left: 100%;
+        }
+
+        body.english .submit-btn:hover::before {
+            right: 100%;
         }
 
         .submit-btn:hover {
@@ -945,6 +1113,11 @@
             white-space: nowrap;
         }
 
+        body.english .whatsapp-float .tooltip {
+            left: calc(100% + 10px);
+            right: auto;
+        }
+
         .whatsapp-float .tooltip::after {
             content: '';
             position: absolute;
@@ -954,6 +1127,12 @@
             border-width: 5px;
             border-style: solid;
             border-color: transparent transparent transparent var(--dark);
+        }
+
+        body.english .whatsapp-float .tooltip::after {
+            right: 100%;
+            left: auto;
+            border-color: transparent var(--dark) transparent transparent;
         }
 
         .whatsapp-float:hover .tooltip {
@@ -980,6 +1159,9 @@
             font-weight: 700;
             margin-bottom: 20px;
             color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-logo span {
@@ -998,6 +1180,9 @@
             color: var(--secondary);
             position: relative;
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-title::after {
@@ -1008,6 +1193,11 @@
             background: var(--secondary);
             bottom: 0;
             right: 0;
+        }
+
+        body.english .footer-title::after {
+            left: 0;
+            right: auto;
         }
 
         .footer-links {
@@ -1031,6 +1221,11 @@
         .footer-links a:hover {
             color: var(--secondary);
             padding-right: 10px;
+        }
+
+        body.english .footer-links a:hover {
+            padding-left: 10px;
+            padding-right: 0;
         }
 
         .social-icons {
@@ -1063,6 +1258,10 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
             font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         /* Responsive Design */
@@ -1089,6 +1288,11 @@
                 height: 60px;
                 font-size: 1.7rem;
             }
+            
+            .language-toggle {
+                top: 90px;
+                right: 15px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1114,6 +1318,8 @@
             
             .hero-title {
                 font-size: 2.2rem;
+                flex-direction: column;
+                gap: 10px;
             }
             
             .hero-subtitle {
@@ -1145,10 +1351,24 @@
             .tab-btn {
                 width: 100%;
                 text-align: center;
+                justify-content: center;
             }
             
             .whatsapp-float .tooltip {
                 display: none;
+            }
+            
+            .language-toggle {
+                flex-direction: row;
+                top: auto;
+                bottom: 100px;
+                right: 20px;
+                gap: 5px;
+            }
+            
+            .lang-btn {
+                padding: 8px 12px;
+                font-size: 0.8rem;
             }
         }
 
@@ -1183,6 +1403,11 @@
                 width: 55px;
                 height: 55px;
                 font-size: 1.5rem;
+            }
+            
+            .language-toggle {
+                bottom: 90px;
+                right: 15px;
             }
         }
 
@@ -1222,11 +1447,21 @@
     </style>
 </head>
 <body>
+    <!-- Language Toggle Buttons -->
+    <div class="language-toggle">
+        <button class="lang-btn active" id="urduBtn">
+            <i class="fas fa-language"></i> اردو
+        </button>
+        <button class="lang-btn" id="englishBtn">
+            <i class="fas fa-language"></i> English
+        </button>
+    </div>
+
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-float">
         <a href="https://wa.me/923017211194?text=سلام! میں داتا والے فاؤنڈیشن سے رابطہ کرنا چاہتا ہوں۔" target="_blank">
             <i class="fab fa-whatsapp"></i>
-            <span class="tooltip">ہم سے بات کریں! 💬</span>
+            <span class="tooltip" id="whatsappTooltip">ہم سے بات کریں!</span>
         </a>
     </div>
 
@@ -1243,12 +1478,14 @@
             </button>
             
             <nav class="nav-links" id="navLinks">
-                <a href="#home">ہوم <span class="emoji">🏠</span></a>
-                <a href="#services">خدمات <span class="emoji">🎁</span></a>
-                <a href="#stats">اعداد و شمار <span class="emoji">📊</span></a>
-                <a href="#donation">عطیہ دیں <span class="emoji">💝</span></a>
-                <a href="#contact">رابطہ کریں <span class="emoji">📞</span></a>
-                <button class="donate-btn" id="donateBtnHeader">عطیہ دیں <span class="emoji">❤️</span></button>
+                <a href="#home"><i class="fas fa-home"></i> <span class="nav-text" data-urdu="ہوم" data-english="Home">ہوم</span></a>
+                <a href="#services"><i class="fas fa-hands-helping"></i> <span class="nav-text" data-urdu="خدمات" data-english="Services">خدمات</span></a>
+                <a href="#stats"><i class="fas fa-chart-bar"></i> <span class="nav-text" data-urdu="اعداد و شمار" data-english="Statistics">اعداد و شمار</span></a>
+                <a href="#donation"><i class="fas fa-heart"></i> <span class="nav-text" data-urdu="عطیہ دیں" data-english="Donate">عطیہ دیں</span></a>
+                <a href="#contact"><i class="fas fa-phone-alt"></i> <span class="nav-text" data-urdu="رابطہ کریں" data-english="Contact">رابطہ کریں</span></a>
+                <button class="donate-btn" id="donateBtnHeader">
+                    <i class="fas fa-donate"></i> <span class="nav-text" data-urdu="عطیہ دیں" data-english="Donate">عطیہ دیں</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -1256,28 +1493,55 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <h1 class="hero-title">داتا والے فاؤنڈیشن <span class="emoji">🌟</span></h1>
-            <p class="hero-subtitle">غریبون کی خدمت، عزت کے ساتھ <span class="emoji">🤲</span> غریب نیچوں کی شادی <span class="emoji">💑</span>، مفت طبی علاج <span class="emoji">🏥</span>، لیبارٹری ٹیسٹ <span class="emoji">🔬</span>، تعلیمی معاونت <span class="emoji">📚</span> اور دستخوان (راشن و کھانا) <span class="emoji">🍲</span> جیسی خدمات پیش کر رہے ہیں۔</p>
-            <button class="hero-btn" id="donateBtnHero">عطیہ دیں <span class="emoji">🎁</span></button>
+            <h1 class="hero-title">
+                <i class="fas fa-hands-helping icon-inline"></i>
+                <span class="hero-title-text" data-urdu="داتا والے فاؤنڈیشن" data-english="Data Waly Foundation">داتا والے فاؤنڈیشن</span>
+                <i class="fas fa-star icon-inline"></i>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="hero-subtitle-text" data-urdu="غریبون کی خدمت، عزت کے ساتھ۔ غریب نیچوں کی شادی، مفت طبی علاج، لیبارٹری ٹیسٹ، تعلیمی معاونت اور دستخوان (راشن و کھانا) جیسی خدمات پیش کر رہے ہیں۔" data-english="Serving the poor with dignity. Providing services like marriage for poor girls, free medical treatment, laboratory tests, educational support and free food (ration and meals).">غریبون کی خدمت، عزت کے ساتھ۔ غریب نیچوں کی شادی، مفت طبی علاج، لیبارٹری ٹیسٹ، تعلیمی معاونت اور دستخوان (راشن و کھانا) جیسی خدمات پیش کر رہے ہیں۔</span>
+                <i class="fas fa-heart icon-inline"></i>
+                <i class="fas fa-hospital icon-inline"></i>
+                <i class="fas fa-flask icon-inline"></i>
+                <i class="fas fa-book icon-inline"></i>
+                <i class="fas fa-utensils icon-inline"></i>
+            </p>
+            <button class="hero-btn" id="donateBtnHero">
+                <i class="fas fa-gift"></i>
+                <span class="hero-btn-text" data-urdu="عطیہ دیں" data-english="Donate Now">عطیہ دیں</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats" id="stats">
         <div class="container">
-            <h2 class="section-title">ہمارے کارنامے <span class="emoji">🏆</span></h2>
+            <h2 class="section-title">
+                <i class="fas fa-trophy"></i>
+                <span class="section-title-text" data-urdu="ہمارے کارنامے" data-english="Our Achievements">ہمارے کارنامے</span>
+            </h2>
             <div class="stats-container">
                 <div class="stat-card">
                     <div class="stat-number" id="stat1">0</div>
-                    <div class="stat-text">شادیان <span class="emoji">💒</span></div>
+                    <div class="stat-text">
+                        <i class="fas fa-heart"></i>
+                        <span class="stat-text-item" data-urdu="شادیان" data-english="Marriages">شادیان</span>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="stat2">0</div>
-                    <div class="stat-text">علاج <span class="emoji">🏥</span></div>
+                    <div class="stat-text">
+                        <i class="fas fa-stethoscope"></i>
+                        <span class="stat-text-item" data-urdu="علاج" data-english="Treatments">علاج</span>
+                    </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="stat3">0</div>
-                    <div class="stat-text">طباء <span class="emoji">👨‍⚕️</span></div>
+                    <div class="stat-text">
+                        <i class="fas fa-user-md"></i>
+                        <span class="stat-text-item" data-urdu="طباء" data-english="Doctors">طباء</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1286,77 +1550,140 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">ہماری خدمات <span class="emoji">🛠️</span></h2>
+            <h2 class="section-title">
+                <i class="fas fa-concierge-bell"></i>
+                <span class="section-title-text" data-urdu="ہماری خدمات" data-english="Our Services">ہماری خدمات</span>
+            </h2>
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-front">
                         <img src="images/marriage.jpg" alt="غریب نیچوں کی شادی" class="service-img">
-                        <h3 class="service-title">غریب نیچوں کی شادی <span class="emoji">💒</span></h3>
-                        <p class="service-desc">غریب اور نادار لڑکیوں کی شادی کا انتظام</p>
+                        <h3 class="service-title">
+                            <i class="fas fa-heart"></i>
+                            <span class="service-title-text" data-urdu="غریب نیچوں کی شادی" data-english="Marriage for Poor Girls">غریب نیچوں کی شادی</span>
+                        </h3>
+                        <p class="service-desc">
+                            <span class="service-desc-text" data-urdu="غریب اور نادار لڑکیوں کی شادی کا انتظام" data-english="Arranging marriages for poor and needy girls">غریب اور نادار لڑکیوں کی شادی کا انتظام</span>
+                        </p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">شادی کا انتظام <span class="emoji">💝</span></h3>
-                        <p class="back-desc">مکمل شادی کا انتظام، جہیز اور دیگر ضروریات</p>
+                        <h3 class="back-title">
+                            <i class="fas fa-ring"></i>
+                            <span class="back-title-text" data-urdu="شادی کا انتظام" data-english="Marriage Arrangement">شادی کا انتظام</span>
+                        </h3>
+                        <p class="back-desc">
+                            <span class="back-desc-text" data-urdu="مکمل شادی کا انتظام، جہیز اور دیگر ضروریات" data-english="Complete marriage arrangement, dowry and other necessities">مکمل شادی کا انتظام، جہیز اور دیگر ضروریات</span>
+                        </p>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-front">
                         <img src="images/medical.jpg" alt="مفت طبی علاج" class="service-img">
-                        <h3 class="service-title">مفت طبی علاج <span class="emoji">🏥</span></h3>
-                        <p class="service-desc">غریبوں کے لیے مفت علاج اور ادویات</p>
+                        <h3 class="service-title">
+                            <i class="fas fa-hospital"></i>
+                            <span class="service-title-text" data-urdu="مفت طبی علاج" data-english="Free Medical Treatment">مفت طبی علاج</span>
+                        </h3>
+                        <p class="service-desc">
+                            <span class="service-desc-text" data-urdu="غریبوں کے لیے مفت علاج اور ادویات" data-english="Free treatment and medicines for the poor">غریبوں کے لیے مفت علاج اور ادویات</span>
+                        </p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">مفت علاج <span class="emoji">💊</span></h3>
-                        <p class="back-desc">ڈاکٹرز، ادویات اور ہسپتال کا انتظام</p>
+                        <h3 class="back-title">
+                            <i class="fas fa-pills"></i>
+                            <span class="back-title-text" data-urdu="مفت علاج" data-english="Free Treatment">مفت علاج</span>
+                        </h3>
+                        <p class="back-desc">
+                            <span class="back-desc-text" data-urdu="ڈاکٹرز، ادویات اور ہسپتال کا انتظام" data-english="Doctors, medicines and hospital arrangements">ڈاکٹرز، ادویات اور ہسپتال کا انتظام</span>
+                        </p>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-front">
                         <img src="images/lab.jpg" alt="لیبارٹری ٹیسٹ" class="service-img">
-                        <h3 class="service-title">لیبارٹری ٹیسٹ <span class="emoji">🔬</span></h3>
-                        <p class="service-desc">مفت لیبارٹری ٹیسٹ اور تشخیص</p>
+                        <h3 class="service-title">
+                            <i class="fas fa-flask"></i>
+                            <span class="service-title-text" data-urdu="لیبارٹری ٹیسٹ" data-english="Laboratory Tests">لیبارٹری ٹیسٹ</span>
+                        </h3>
+                        <p class="service-desc">
+                            <span class="service-desc-text" data-urdu="مفت لیبارٹری ٹیسٹ اور تشخیص" data-english="Free laboratory tests and diagnosis">مفت لیبارٹری ٹیسٹ اور تشخیص</span>
+                        </p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">ٹیسٹ سہولیات <span class="emoji">🧪</span></h3>
-                        <p class="back-desc">بلڈ ٹیسٹ، ایکسرے، الٹراساؤنڈ وغیرہ</p>
+                        <h3 class="back-title">
+                            <i class="fas fa-vial"></i>
+                            <span class="back-title-text" data-urdu="ٹیسٹ سہولیات" data-english="Test Facilities">ٹیسٹ سہولیات</span>
+                        </h3>
+                        <p class="back-desc">
+                            <span class="back-desc-text" data-urdu="بلڈ ٹیسٹ، ایکسرے، الٹراساؤنڈ وغیرہ" data-english="Blood tests, X-ray, Ultrasound etc.">بلڈ ٹیسٹ، ایکسرے، الٹراساؤنڈ وغیرہ</span>
+                        </p>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-front">
                         <img src="images/education.jpg" alt="تعلیمی معاونت" class="service-img">
-                        <h3 class="service-title">تعلیمی معاونت <span class="emoji">📚</span></h3>
-                        <p class="service-desc">غریب طلباء کے لیے تعلیمی امداد</p>
+                        <h3 class="service-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="service-title-text" data-urdu="تعلیمی معاونت" data-english="Educational Support">تعلیمی معاونت</span>
+                        </h3>
+                        <p class="service-desc">
+                            <span class="service-desc-text" data-urdu="غریب طلباء کے لیے تعلیمی امداد" data-english="Educational assistance for poor students">غریب طلباء کے لیے تعلیمی امداد</span>
+                        </p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">تعلیمی مدد <span class="emoji">🎓</span></h3>
-                        <p class="back-desc">فیس، کتابیں، یونیفارم اور دیگر سہولیات</p>
+                        <h3 class="back-title">
+                            <i class="fas fa-book-open"></i>
+                            <span class="back-title-text" data-urdu="تعلیمی مدد" data-english="Educational Help">تعلیمی مدد</span>
+                        </h3>
+                        <p class="back-desc">
+                            <span class="back-desc-text" data-urdu="فیس، کتابیں، یونیفارم اور دیگر سہولیات" data-english="Fees, books, uniform and other facilities">فیس، کتابیں، یونیفارم اور دیگر سہولیات</span>
+                        </p>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-front">
                         <img src="images/dastarkhwan.jpg" alt="دستخوان (راشن و کھانا)" class="service-img">
-                        <h3 class="service-title">دستخوان (راشن و کھانا) <span class="emoji">🍲</span></h3>
-                        <p class="service-desc">غریبوں کے لیے مفت راشن اور کھانا</p>
+                        <h3 class="service-title">
+                            <i class="fas fa-utensils"></i>
+                            <span class="service-title-text" data-urdu="دستخوان (راشن و کھانا)" data-english="Free Food (Ration & Meals)">دستخوان (راشن و کھانا)</span>
+                        </h3>
+                        <p class="service-desc">
+                            <span class="service-desc-text" data-urdu="غریبوں کے لیے مفت راشن اور کھانا" data-english="Free ration and meals for the poor">غریبوں کے لیے مفت راشن اور کھانا</span>
+                        </p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">خوراک کی فراہمی <span class="emoji">🍛</span></h3>
-                        <p class="back-desc">ماہانہ راشن اور روزانہ کھانے کا انتظام</p>
+                        <h3 class="back-title">
+                            <i class="fas fa-drumstick-bite"></i>
+                            <span class="back-title-text" data-urdu="خوراک کی فراہمی" data-english="Food Supply">خوراک کی فراہمی</span>
+                        </h3>
+                        <p class="back-desc">
+                            <span class="back-desc-text" data-urdu="ماہانہ راشن اور روزانہ کھانے کا انتظام" data-english="Monthly ration and daily meals arrangement">ماہانہ راشن اور روزانہ کھانے کا انتظام</span>
+                        </p>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-front">
                         <img src="images/ambulance.jpg" alt="فری ایمبولینس سروس" class="service-img">
-                        <h3 class="service-title">فری ایمبولینس سروس <span class="emoji">🚑</span></h3>
-                        <p class="service-desc">مفت ایمبولینس سروس اور ایمرجنسی مدد</p>
+                        <h3 class="service-title">
+                            <i class="fas fa-ambulance"></i>
+                            <span class="service-title-text" data-urdu="فری ایمبولینس سروس" data-english="Free Ambulance Service">فری ایمبولینس سروس</span>
+                        </h3>
+                        <p class="service-desc">
+                            <span class="service-desc-text" data-urdu="مفت ایمبولینس سروس اور ایمرجنسی مدد" data-english="Free ambulance service and emergency help">مفت ایمبولینس سروس اور ایمرجنسی مدد</span>
+                        </p>
                     </div>
                     <div class="service-back">
-                        <h3 class="back-title">ایمرجنسی سروس <span class="emoji">🚨</span></h3>
-                        <p class="back-desc">24/7 ایمبولینس سروس اور ایمرجنسی علاج</p>
+                        <h3 class="back-title">
+                            <i class="fas fa-first-aid"></i>
+                            <span class="back-title-text" data-urdu="ایمرجنسی سروس" data-english="Emergency Service">ایمرجنسی سروس</span>
+                        </h3>
+                        <p class="back-desc">
+                            <span class="back-desc-text" data-urdu="24/7 ایمبولینس سروس اور ایمرجنسی علاج" data-english="24/7 ambulance service and emergency treatment">24/7 ایمبولینس سروس اور ایمرجنسی علاج</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1366,12 +1693,23 @@
     <!-- Donation Section -->
     <section class="donation" id="donation">
         <div class="container">
-            <h2 class="donation-title">آپ کا عطیہ کسی کی زندگی بدل سکتا ہے <span class="emoji">💝</span></h2>
-            <p class="donation-subtitle">اپنا عطیہ JazzCash یا بینک اکاؤنٹ کے ذریعے بھیجیں۔ آپ کا ہر روپیہ غریبوں کی مدد پر خرچ کیا جائے گا۔ <span class="emoji">🤲</span></p>
+            <h2 class="donation-title">
+                <i class="fas fa-hand-holding-heart"></i>
+                <span class="donation-title-text" data-urdu="آپ کا عطیہ کسی کی زندگی بدل سکتا ہے" data-english="Your donation can change someone's life">آپ کا عطیہ کسی کی زندگی بدل سکتا ہے</span>
+            </h2>
+            <p class="donation-subtitle">
+                <span class="donation-subtitle-text" data-urdu="اپنا عطیہ JazzCash یا بینک اکاؤنٹ کے ذریعے بھیجیں۔ آپ کا ہر روپیہ غریبوں کی مدد پر خرچ کیا جائے گا۔" data-english="Send your donation via JazzCash or Bank Account. Every rupee will be spent on helping the poor.">اپنا عطیہ JazzCash یا بینک اکاؤنٹ کے ذریعے بھیجیں۔ آپ کا ہر روپیہ غریبوں کی مدد پر خرچ کیا جائے گا۔</span>
+            </p>
             
             <div class="donation-tabs">
-                <button class="tab-btn active" data-tab="jazzcash">JazzCash <span class="emoji">📱</span></button>
-                <button class="tab-btn" data-tab="bank">بینک اکاؤنٹ <span class="emoji">🏦</span></button>
+                <button class="tab-btn active" data-tab="jazzcash">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="tab-btn-text" data-urdu="JazzCash" data-english="JazzCash">JazzCash</span>
+                </button>
+                <button class="tab-btn" data-tab="bank">
+                    <i class="fas fa-university"></i>
+                    <span class="tab-btn-text" data-urdu="بینک اکاؤنٹ" data-english="Bank Account">بینک اکاؤنٹ</span>
+                </button>
             </div>
             
             <!-- JazzCash Tab Content -->
@@ -1379,13 +1717,16 @@
                 <div class="method-card">
                     <div class="method-header">
                         <img src="images/jazzcash.png" alt="JazzCash" class="method-logo">
-                        <h3 class="method-title">JazzCash کے ذریعے عطیہ دیں <span class="emoji">💸</span></h3>
+                        <h3 class="method-title">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span class="method-title-text" data-urdu="JazzCash کے ذریعے عطیہ دیں" data-english="Donate via JazzCash">JazzCash کے ذریعے عطیہ دیں</span>
+                        </h3>
                     </div>
                     
                     <div class="method-details">
-                        <p><strong>اکاؤنٹ ٹائٹل:</strong> داتا والے فاؤنڈیشن</p>
-                        <p><strong>موبائل نمبر:</strong> 0301-7211194</p>
-                        <p><strong>Till ID:</strong> 982-351-540</p>
+                        <p><strong data-urdu="اکاؤنٹ ٹائٹل:" data-english="Account Title:">اکاؤنٹ ٹائٹل:</strong> داتا والے فاؤنڈیشن</p>
+                        <p><strong data-urdu="موبائل نمبر:" data-english="Mobile Number:">موبائل نمبر:</strong> 0301-7211194</p>
+                        <p><strong data-urdu="Till ID:" data-english="Till ID:">Till ID:</strong> 982-351-540</p>
                     </div>
                     
                     <div class="qr-container">
@@ -1393,17 +1734,22 @@
                     </div>
                     
                     <div class="instructions">
-                        <h4 class="instruction-title">ہدایات: <span class="emoji">📝</span></h4>
+                        <h4 class="instruction-title">
+                            <i class="fas fa-list-ol"></i>
+                            <span class="instruction-title-text" data-urdu="ہدایات:" data-english="Instructions:">ہدایات:</span>
+                        </h4>
                         <ul class="instruction-steps">
-                            <li>1. اپنے موبائل سے *786*10# ڈائل کریں <span class="emoji">📞</span></li>
-                            <li>2. Till ID درج کریں: <strong>982351540</strong> <span class="emoji">🔢</span></li>
-                            <li>3. رقم درج کریں اور تصدیق کریں <span class="emoji">✅</span></li>
-                            <li>4. آپ کا عطیہ ہمارے پاس پہنچ جائے گا <span class="emoji">🎉</span></li>
+                            <li><i class="fas fa-phone-alt"></i> <span data-urdu="اپنے موبائل سے *786*10# ڈائل کریں" data-english="Dial *786*10# from your mobile">1. اپنے موبائل سے *786*10# ڈائل کریں</span></li>
+                            <li><i class="fas fa-keyboard"></i> <span data-urdu="Till ID درج کریں: 982351540" data-english="Enter Till ID: 982351540">2. Till ID درج کریں: <strong>982351540</strong></span></li>
+                            <li><i class="fas fa-money-check-alt"></i> <span data-urdu="رقم درج کریں اور تصدیق کریں" data-english="Enter amount and confirm">3. رقم درج کریں اور تصدیق کریں</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-urdu="آپ کا عطیہ ہمارے پاس پہنچ جائے گا" data-english="Your donation will reach us">4. آپ کا عطیہ ہمارے پاس پہنچ جائے گا</span></li>
                         </ul>
                     </div>
                     
                     <button class="whatsapp-btn" id="whatsappBtnJazz">
-                        <i class="fab fa-whatsapp"></i> وصولی وٹس ایپ پر بھیجیں <span class="emoji">📲</span>
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="whatsapp-btn-text" data-urdu="وصولی وٹس ایپ پر بھیجیں" data-english="Send Receipt on WhatsApp">وصولی وٹس ایپ پر بھیجیں</span>
+                        <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
             </div>
@@ -1413,29 +1759,37 @@
                 <div class="method-card">
                     <div class="method-header">
                         <img src="images/bank.png" alt="بینک" class="method-logo">
-                        <h3 class="method-title">بینک اکاؤنٹ کے ذریعے عطیہ دیں <span class="emoji">💰</span></h3>
+                        <h3 class="method-title">
+                            <i class="fas fa-credit-card"></i>
+                            <span class="method-title-text" data-urdu="بینک اکاؤنٹ کے ذریعے عطیہ دیں" data-english="Donate via Bank Account">بینک اکاؤنٹ کے ذریعے عطیہ دیں</span>
+                        </h3>
                     </div>
                     
                     <div class="method-details">
-                        <p><strong>اکاؤنٹ ٹائٹل:</strong> داتا والے فاؤنڈیشن</p>
-                        <p><strong>بینک:</strong> JS Bank Limited</p>
-                        <p><strong>IBAN:</strong> PK22JCMA1901921017211194</p>
-                        <p><strong>اکاؤنٹ نمبر:</strong> 1901921017211194</p>
-                        <p><strong>برانچ:</strong> ساہیوال</p>
+                        <p><strong data-urdu="اکاؤنٹ ٹائٹل:" data-english="Account Title:">اکاؤنٹ ٹائٹل:</strong> داتا والے فاؤنڈیشن</p>
+                        <p><strong data-urdu="بینک:" data-english="Bank:">بینک:</strong> Moblink Bank</p>
+                        <p><strong data-urdu="IBAN:" data-english="IBAN:">IBAN:</strong> PK22JCMA1901921017211194</p>
+                        <p><strong data-urdu="اکاؤنٹ نمبر:" data-english="Account Number:">اکاؤنٹ نمبر:</strong> 1901921017211194</p>
+                        <p><strong data-urdu="برانچ:" data-english="Branch:">برانچ:</strong> ساہیوال</p>
                     </div>
                     
                     <div class="instructions">
-                        <h4 class="instruction-title">ہدایات: <span class="emoji">📝</span></h4>
+                        <h4 class="instruction-title">
+                            <i class="fas fa-list-ol"></i>
+                            <span class="instruction-title-text" data-urdu="ہدایات:" data-english="Instructions:">ہدایات:</span>
+                        </h4>
                         <ul class="instruction-steps">
-                            <li>1. اپنے بینک ایپ یا برانچ سے منتقلی کریں <span class="emoji">🏦</span></li>
-                            <li>2. IBAN: PK22JCMA1901921017211194 <span class="emoji">🔢</span></li>
-                            <li>3. اکاؤنٹ نمبر: 1901921017211194 <span class="emoji">💳</span></li>
-                            <li>4. منتقلی کی تصدیق ہونے کے بعد وصولی بھیجیں <span class="emoji">✅</span></li>
+                            <li><i class="fas fa-mobile-alt"></i> <span data-urdu="اپنے بینک ایپ یا برانچ سے منتقلی کریں" data-english="Transfer from your bank app or branch">1. اپنے بینک ایپ یا برانچ سے منتقلی کریں</span></li>
+                            <li><i class="fas fa-file-invoice"></i> <span data-urdu="IBAN: PK22JCMA1901921017211194" data-english="IBAN: PK22JCMA1901921017211194">2. IBAN: PK22JCMA1901921017211194</span></li>
+                            <li><i class="fas fa-credit-card"></i> <span data-urdu="اکاؤنٹ نمبر: 1901921017211194" data-english="Account Number: 1901921017211194">3. اکاؤنٹ نمبر: 1901921017211194</span></li>
+                            <li><i class="fas fa-check-double"></i> <span data-urdu="منتقلی کی تصدیق ہونے کے بعد وصولی بھیجیں" data-english="Send receipt after transfer confirmation">4. منتقلی کی تصدیق ہونے کے بعد وصولی بھیجیں</span></li>
                         </ul>
                     </div>
                     
                     <button class="whatsapp-btn" id="whatsappBtnBank">
-                        <i class="fab fa-whatsapp"></i> وصولی وٹس ایپ پر بھیجیں <span class="emoji">📲</span>
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="whatsapp-btn-text" data-urdu="وصولی وٹس ایپ پر بھیجیں" data-english="Send Receipt on WhatsApp">وصولی وٹس ایپ پر بھیجیں</span>
+                        <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
             </div>
@@ -1446,15 +1800,18 @@
     <section class="contact" id="contact">
         <div class="container contact-container">
             <div class="contact-info">
-                <h2 class="contact-title"><i class="fas fa-comments"></i> ہم سے رابطہ کریں <span class="emoji">📞</span></h2>
+                <h2 class="contact-title">
+                    <i class="fas fa-comments"></i>
+                    <span class="contact-title-text" data-urdu="ہم سے رابطہ کریں" data-english="Contact Us">ہم سے رابطہ کریں</span>
+                </h2>
                 
                 <div class="contact-item">
                     <div class="contact-icon whatsapp-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="contact-text">
-                        <strong>WhatsApp:</strong> +92 301 7211194
-                        <br><small>ہمیں WhatsApp پر میسج کریں! <span class="emoji">💬</span></small>
+                        <strong data-urdu="WhatsApp:" data-english="WhatsApp:">WhatsApp:</strong> +92 301 7211194
+                        <br><small class="contact-small-text" data-urdu="ہمیں WhatsApp پر میسج کریں!" data-english="Message us on WhatsApp!">ہمیں WhatsApp پر میسج کریں!</small>
                     </div>
                 </div>
                 
@@ -1463,8 +1820,8 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="contact-text">
-                        <strong>فون نمبر:</strong> +92 301 7211194
-                        <br><small>24/7 رابطہ کے لیے دستیاب <span class="emoji">📱</span></small>
+                        <strong data-urdu="فون نمبر:" data-english="Phone Number:">فون نمبر:</strong> +92 301 7211194
+                        <br><small class="contact-small-text" data-urdu="24/7 رابطہ کے لیے دستیاب" data-english="Available for contact 24/7">24/7 رابطہ کے لیے دستیاب</small>
                     </div>
                 </div>
                 
@@ -1473,8 +1830,8 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="contact-text">
-                        <strong>ای میل:</strong> datawalyfoundation@gmail.com
-                        <br><small>ہمیں ای میل بھیجیں <span class="emoji">📧</span></small>
+                        <strong data-urdu="ای میل:" data-english="Email:">ای میل:</strong> datawalyfoundation@gmail.com
+                        <br><small class="contact-small-text" data-urdu="ہمیں ای میل بھیجیں" data-english="Send us an email">ہمیں ای میل بھیجیں</small>
                     </div>
                 </div>
                 
@@ -1483,8 +1840,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-text">
-                        <strong>پتہ:</strong> ساہیوال، پنجاب، پاکستان
-                        <br><small>ہمارے دفتر آئیے <span class="emoji">📍</span></small>
+                        <strong data-urdu="پتہ:" data-english="Address:">پتہ:</strong> ساہیوال، پنجاب، پاکستان
+                        <br><small class="contact-small-text" data-urdu="ہمارے دفتر آئیے" data-english="Visit our office">ہمارے دفتر آئیے</small>
                     </div>
                 </div>
                 
@@ -1500,26 +1857,29 @@
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="آپ کا نام 💁" required>
+                        <input type="text" class="form-input" placeholder="آپ کا نام" required>
                     </div>
                     
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="آپ کا ای میل 📧" required>
+                        <input type="email" class="form-input" placeholder="آپ کا ای میل" required>
                     </div>
                     
                     <div class="form-group">
-                        <input type="tel" class="form-input" placeholder="آپ کا فون نمبر 📱" required>
+                        <input type="tel" class="form-input" placeholder="آپ کا فون نمبر" required>
                     </div>
                     
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="موضوع 📝" required>
+                        <input type="text" class="form-input" placeholder="موضوع" required>
                     </div>
                     
                     <div class="form-group">
-                        <textarea class="form-textarea" placeholder="آپ کا پیغام 💬" required></textarea>
+                        <textarea class="form-textarea" placeholder="آپ کا پیغام" required></textarea>
                     </div>
                     
-                    <button type="submit" class="submit-btn">پیغام بھیجیں <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="submit-btn-text" data-urdu="پیغام بھیجیں" data-english="Send Message">پیغام بھیجیں</span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -1530,8 +1890,11 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-about">
-                    <div class="footer-logo">داتا والے <span>فاؤنڈیشن</span> <span class="emoji">🌟</span></div>
-                    <p class="footer-about">ہم غریب اور نادار لوگوں کی مدد کے لیے کوشاں ہیں۔ شادی، علاج، تعلیم اور خوراک کی مدد فراہم کر رہے ہیں۔ <span class="emoji">🤲</span></p>
+                    <div class="footer-logo">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>داتا والے <span class="footer-logo-highlight">فاؤنڈیشن</span></span>
+                    </div>
+                    <p class="footer-about-text" data-urdu="ہم غریب اور نادار لوگوں کی مدد کے لیے کوشاں ہیں۔ شادی، علاج، تعلیم اور خوراک کی مدد فراہم کر رہے ہیں۔" data-english="We are striving to help poor and needy people. Providing marriage, treatment, education and food support.">ہم غریب اور نادار لوگوں کی مدد کے لیے کوشاں ہیں۔ شادی، علاج، تعلیم اور خوراک کی مدد فراہم کر رہے ہیں۔</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
@@ -1541,35 +1904,146 @@
                 </div>
                 
                 <div class="footer-links-container">
-                    <h3 class="footer-title">جلدی لنکس <span class="emoji">⚡</span></h3>
+                    <h3 class="footer-title">
+                        <i class="fas fa-bolt"></i>
+                        <span class="footer-title-text" data-urdu="جلدی لنکس" data-english="Quick Links">جلدی لنکس</span>
+                    </h3>
                     <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-home"></i> ہوم</a></li>
-                        <li><a href="#services"><i class="fas fa-hands-helping"></i> خدمات</a></li>
-                        <li><a href="#stats"><i class="fas fa-chart-bar"></i> اعداد و شمار</a></li>
-                        <li><a href="#donation"><i class="fas fa-heart"></i> عطیہ دیں</a></li>
-                        <li><a href="#contact"><i class="fas fa-phone-alt"></i> رابطہ کریں</a></li>
+                        <li><a href="#home"><i class="fas fa-home"></i> <span data-urdu="ہوم" data-english="Home">ہوم</span></a></li>
+                        <li><a href="#services"><i class="fas fa-hands-helping"></i> <span data-urdu="خدمات" data-english="Services">خدمات</span></a></li>
+                        <li><a href="#stats"><i class="fas fa-chart-bar"></i> <span data-urdu="اعداد و شمار" data-english="Statistics">اعداد و شمار</span></a></li>
+                        <li><a href="#donation"><i class="fas fa-heart"></i> <span data-urdu="عطیہ دیں" data-english="Donate">عطیہ دیں</span></a></li>
+                        <li><a href="#contact"><i class="fas fa-phone-alt"></i> <span data-urdu="رابطہ کریں" data-english="Contact">رابطہ کریں</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-services-container">
-                    <h3 class="footer-title">خدمات <span class="emoji">🎁</span></h3>
+                    <h3 class="footer-title">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span class="footer-title-text" data-urdu="خدمات" data-english="Services">خدمات</span>
+                    </h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-heart"></i> غریب نیچوں کی شادی</a></li>
-                        <li><a href="#"><i class="fas fa-stethoscope"></i> مفت طبی علاج</a></li>
-                        <li><a href="#"><i class="fas fa-flask"></i> لیبارٹری ٹیسٹ</a></li>
-                        <li><a href="#"><i class="fas fa-graduation-cap"></i> تعلیمی معاونت</a></li>
-                        <li><a href="#"><i class="fas fa-utensils"></i> دستخوان (راشن و کھانا)</a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i> <span data-urdu="غریب نیچوں کی شادی" data-english="Marriage for Poor Girls">غریب نیچوں کی شادی</span></a></li>
+                        <li><a href="#"><i class="fas fa-stethoscope"></i> <span data-urdu="مفت طبی علاج" data-english="Free Medical Treatment">مفت طبی علاج</span></a></li>
+                        <li><a href="#"><i class="fas fa-flask"></i> <span data-urdu="لیبارٹری ٹیسٹ" data-english="Laboratory Tests">لیبارٹری ٹیسٹ</span></a></li>
+                        <li><a href="#"><i class="fas fa-graduation-cap"></i> <span data-urdu="تعلیمی معاونت" data-english="Educational Support">تعلیمی معاونت</span></a></li>
+                        <li><a href="#"><i class="fas fa-utensils"></i> <span data-urdu="دستخوان (راشن و کھانا)" data-english="Free Food (Ration & Meals)">دستخوان (راشن و کھانا)</span></a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                © 2023 داتا والے فاؤنڈیشن، ساہیوال۔ تمام حقوق محفوظ ہیں۔ <span class="emoji">❤️</span>
+                <i class="far fa-copyright"></i>
+                <span class="copyright-text" data-urdu="2023 داتا والے فاؤنڈیشن، ساہیوال۔ تمام حقوق محفوظ ہیں۔" data-english="2023 Data Waly Foundation, Sahiwal. All rights reserved.">2023 داتا والے فاؤنڈیشن، ساہیوال۔ تمام حقوق محفوظ ہیں۔</span>
+                <i class="fas fa-heart"></i>
             </div>
         </div>
     </footer>
 
     <script>
+        // Language Toggle Functionality
+        const urduBtn = document.getElementById('urduBtn');
+        const englishBtn = document.getElementById('englishBtn');
+        const body = document.body;
+        const html = document.documentElement;
+        const whatsappTooltip = document.getElementById('whatsappTooltip');
+        
+        // Set initial language to Urdu
+        let currentLanguage = 'urdu';
+        
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update body class for direction
+            if (lang === 'english') {
+                body.classList.add('english');
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                
+                // Update WhatsApp tooltip
+                if (whatsappTooltip) {
+                    whatsappTooltip.textContent = 'Chat with us!';
+                }
+                
+                // Update WhatsApp link
+                const whatsappLink = document.querySelector('.whatsapp-float a');
+                if (whatsappLink) {
+                    whatsappLink.href = "https://wa.me/923017211194?text=Hello! I want to contact Data Waly Foundation.";
+                }
+            } else {
+                body.classList.remove('english');
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ur');
+                
+                // Update WhatsApp tooltip
+                if (whatsappTooltip) {
+                    whatsappTooltip.textContent = 'ہم سے بات کریں!';
+                }
+                
+                // Update WhatsApp link
+                const whatsappLink = document.querySelector('.whatsapp-float a');
+                if (whatsappLink) {
+                    whatsappLink.href = "https://wa.me/923017211194?text=سلام! میں داتا والے فاؤنڈیشن سے رابطہ کرنا چاہتا ہوں۔";
+                }
+            }
+            
+            // Update button active states
+            if (lang === 'urdu') {
+                urduBtn.classList.add('active');
+                englishBtn.classList.remove('active');
+            } else {
+                englishBtn.classList.add('active');
+                urduBtn.classList.remove('active');
+            }
+            
+            // Update all translatable text
+            document.querySelectorAll('[data-urdu], [data-english]').forEach(element => {
+                if (lang === 'urdu' && element.dataset.urdu) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.dataset.urdu;
+                    } else {
+                        element.textContent = element.dataset.urdu;
+                    }
+                } else if (lang === 'english' && element.dataset.english) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.dataset.english;
+                    } else {
+                        element.textContent = element.dataset.english;
+                    }
+                }
+            });
+            
+            // Update contact form placeholders
+            if (lang === 'english') {
+                document.querySelectorAll('.form-input, .form-textarea').forEach((input, index) => {
+                    const placeholders = ['Your Name', 'Your Email', 'Your Phone Number', 'Subject', 'Your Message'];
+                    if (placeholders[index]) {
+                        input.placeholder = placeholders[index];
+                    }
+                });
+            } else {
+                document.querySelectorAll('.form-input, .form-textarea').forEach((input, index) => {
+                    const placeholders = ['آپ کا نام', 'آپ کا ای میل', 'آپ کا فون نمبر', 'موضوع', 'آپ کا پیغام'];
+                    if (placeholders[index]) {
+                        input.placeholder = placeholders[index];
+                    }
+                });
+            }
+        }
+        
+        // Event listeners for language buttons
+        urduBtn.addEventListener('click', () => {
+            if (currentLanguage !== 'urdu') {
+                setLanguage('urdu');
+            }
+        });
+        
+        englishBtn.addEventListener('click', () => {
+            if (currentLanguage !== 'english') {
+                setLanguage('english');
+            }
+        });
+        
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -1674,14 +2148,24 @@
         // WhatsApp Receipt Buttons
         document.getElementById('whatsappBtnJazz').addEventListener('click', () => {
             const phone = "923017211194";
-            const message = "سلام! میں نے داتا والے فاؤنڈیشن کو JazzCash کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
+            let message = "";
+            if (currentLanguage === 'urdu') {
+                message = "سلام! میں نے داتا والے فاؤنڈیشن کو JazzCash کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
+            } else {
+                message = "Hello! I have donated to Data Waly Foundation via JazzCash. Please send me the receipt.";
+            }
             const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         });
         
         document.getElementById('whatsappBtnBank').addEventListener('click', () => {
             const phone = "923017211194";
-            const message = "سلام! میں نے داتا والے فاؤنڈیشن کو بینک کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
+            let message = "";
+            if (currentLanguage === 'urdu') {
+                message = "سلام! میں نے داتا والے فاؤنڈیشن کو بینک کے ذریعے عطیہ دیا ہے۔ براہ کرم میری وصولی بھیجیں۔";
+            } else {
+                message = "Hello! I have donated to Data Waly Foundation via Bank. Please send me the receipt.";
+            }
             const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         });
@@ -1689,25 +2173,31 @@
         // Contact Form Submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('آپ کا پیغام بھیج دیا گیا ہے۔ ہم جلد آپ سے رابطہ کریں گے۔ 💌');
+            if (currentLanguage === 'urdu') {
+                alert('آپ کا پیغام بھیج دیا گیا ہے۔ ہم جلد آپ سے رابطہ کریں گے۔');
+            } else {
+                alert('Your message has been sent. We will contact you soon.');
+            }
             this.reset();
         });
         
-        // Add floating emoji animation
-        function createFloatingEmoji() {
-            const emojis = ['❤️', '🌟', '🎁', '🤲', '💝', '🙏'];
-            const emoji = document.createElement('div');
-            emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.position = 'fixed';
-            emoji.style.fontSize = Math.random() * 20 + 20 + 'px';
-            emoji.style.left = Math.random() * 100 + 'vw';
-            emoji.style.top = '100vh';
-            emoji.style.opacity = '0.7';
-            emoji.style.zIndex = '9999';
-            emoji.style.pointerEvents = 'none';
-            document.body.appendChild(emoji);
+        // Add floating icon animation
+        function createFloatingIcon() {
+            const icons = ['fas fa-heart', 'fas fa-star', 'fas fa-hands-helping', 'fas fa-gift', 'fas fa-donate', 'fas fa-hands'];
+            const iconClass = icons[Math.floor(Math.random() * icons.length)];
+            const icon = document.createElement('i');
+            icon.className = iconClass;
+            icon.style.position = 'fixed';
+            icon.style.fontSize = Math.random() * 20 + 20 + 'px';
+            icon.style.color = currentLanguage === 'urdu' ? 'var(--primary)' : 'var(--secondary)';
+            icon.style.left = Math.random() * 100 + 'vw';
+            icon.style.top = '100vh';
+            icon.style.opacity = '0.7';
+            icon.style.zIndex = '9999';
+            icon.style.pointerEvents = 'none';
+            document.body.appendChild(icon);
             
-            const animation = emoji.animate([
+            const animation = icon.animate([
                 { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
                 { transform: `translateY(-${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
             ], {
@@ -1715,15 +2205,18 @@
                 easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
             });
             
-            animation.onfinish = () => emoji.remove();
+            animation.onfinish = () => icon.remove();
         }
         
-        // Create floating emojis occasionally
-        setInterval(createFloatingEmoji, 3000);
+        // Create floating icons occasionally
+        setInterval(createFloatingIcon, 3000);
         
         // Initialize on page load
         window.addEventListener('load', () => {
             checkCounters();
+            // Set initial language
+            setLanguage('urdu');
+            
             // Add a welcome message
             setTimeout(() => {
                 console.log('%c🌟 داتا والے فاؤنڈیشن میں خوش آمدید 🌟', 'color: #2e7d32; font-size: 18px; font-weight: bold;');
@@ -1760,17 +2253,6 @@
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) rotateX(0)';
             });
-        });
-        
-        // Add click sound effect (optional)
-        document.addEventListener('click', function(e) {
-            if(e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
-                // Optional: Add a subtle click effect
-                e.target.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    e.target.style.transform = '';
-                }, 150);
-            }
         });
     </script>
 </body>
